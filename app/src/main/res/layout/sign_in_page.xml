@@ -60,7 +60,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_continue"
             android:layout_width="314dp"
-            android:layout_height="35dp"
+            android:layout_height="38dp"
             android:gravity="center"
             android:background="@drawable/bg_rounded_button_continue"
             android:text="계속"
