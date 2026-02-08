@@ -49,65 +49,65 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/all"
                 android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
                 android:background="@drawable/bg_rounded_all"
                 android:text="전체"
                 android:textSize="13sp"
                 android:textColor="#FFFFFF"
-                android:layout_margin="10dp"/>
+                android:layout_margin="5dp"/>
 
             <!--  FRAME: Top  -->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/top"
                 android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
                 android:background="@drawable/bg_rounded_top"
                 android:text="상의"
                 android:textSize="13sp"
                 android:textColor="#000000"
                 android:gravity="center"
-                android:layout_margin="10dp"/>
+                android:layout_margin="5dp"/>
 
             <!--  FRAME: Bottoms  -->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/bottoms"
                 android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
                 android:background="@drawable/bg_rounded_bottoms"
                 android:text="하의"
                 android:textSize="13sp"
                 android:textColor="#000000"
                 android:gravity="center"
-                android:layout_margin="10dp"/>
+                android:layout_margin="5dp"/>
 
             <!--  FRAME: Acc  -->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/acc"
                 android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="90dp"
+                android:layout_height="30dp"
                 android:background="@drawable/bg_rounded_acc"
                 android:text="악세사리"
                 android:textSize="13sp"
                 android:textColor="#000000"
                 android:gravity="center"
-                android:layout_margin="10dp"/>
+                android:layout_margin="5dp"/>
 
             <!--  FRAME: Bag  -->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/bag"
                 android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
                 android:background="@drawable/bg_rounded_bag"
                 android:text="가방"
                 android:textSize="13sp"
                 android:textColor="#000000"
                 android:gravity="center"
-                android:layout_margin="10dp"/>
+                android:layout_margin="5dp"/>
         </LinearLayout>
 
         <!--  FRAME: Cards  -->
