@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextStyle_23.03999900817871sp">
+        <item name="android:textSize">23.03999900817871sp</item>
+        <item name="android:textColor">#FF000000</item>
+        <item name="android:fontFamily">Inter</item>
+    </style>
+    <style name="TextStyle_13.4399995803833sp">
+        <item name="android:textSize">13.4399995803833sp</item>
+        <item name="android:textColor">#FF000000</item>
+        <item name="android:fontFamily">Inter</item>
+    </style>
+    <style name="TextStyle_24.387161254882812sp">
+        <item name="android:textSize">24.387161254882812sp</item>
+        <item name="android:textColor">#FF1E1E1E</item>
+        <item name="android:fontFamily">Inter</item>
+    </style>
+    <style name="TextStyle_16.258108139038086sp">
+        <item name="android:textSize">16.258108139038086sp</item>
+        <item name="android:textColor">#FF757575</item>
+        <item name="android:fontFamily">Inter</item>
+    </style>
+    <style name="TextStyle_11.519999504089355sp">
+        <item name="android:textSize">11.519999504089355sp</item>
+        <item name="android:textColor">#FF828282</item>
+        <item name="android:fontFamily">Inter</item>
+    </style>
+    <style name="TextStyle_15.359999656677246sp">
+        <item name="android:textSize">15.359999656677246sp</item>
+        <item name="android:textColor">#FF000000</item>
+        <item name="android:fontFamily">Inter</item>
+    </style>
+    <style name="TextStyle_19.19999885559082sp">
+        <item name="android:textSize">19.19999885559082sp</item>
+        <item name="android:textColor">#FF000000</item>
+        <item name="android:fontFamily">Inter</item>
+    </style>
+</resources>

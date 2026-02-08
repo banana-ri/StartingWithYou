@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFFFF">
+    <!--  Frame: Try (360x780)  -->
+    <!--  INSTANCE: Arrow left-circle  -->
+    <ImageButton
+        android:id="@+id/arrow_left_circle"
+        android:layout_width="31dp"
+        android:layout_height="31dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="10dp"
+        android:background="#FFFFFFFF"
+        android:src="@drawable/arrow_left_circle" />
+</RelativeLayout>

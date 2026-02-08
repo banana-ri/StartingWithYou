@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#FFFFFFFF">
+    <!--  Frame: Add_Context (360x780)  -->
+    <!--  FRAME: List  -->
+    <FrameLayout
+        android:id="@+id/list"
+        android:layout_width="329dp"
+        android:layout_height="317dp"
+        android:background="@drawable/bg_rounded"
+        android:paddingLeft="15.359999656677246dp"
+        android:paddingTop="15.359999656677246dp"
+        android:paddingRight="15.359999656677246dp"
+        android:paddingBottom="15.359999656677246dp">
+        <!--  FRAME: Lists  -->
+        <LinearLayout android:id="@+id/lists" android:orientation="vertical" android:layout_width="299dp" android:layout_height="257dp">
+            <!--  FRAME: Cell  -->
+            <LinearLayout android:id="@+id/cell" android:orientation="horizontal" android:layout_width="299dp" android:layout_height="51dp" android:background="@drawable/bg_rounded" android:paddingLeft="0dp" android:paddingTop="7.679999828338623dp" android:paddingRight="0dp" android:paddingBottom="7.679999828338623dp">
+                <!--  FRAME: Avatar  -->
+                <FrameLayout android:id="@+id/avatar" android:layout_width="31dp" android:layout_height="31dp" android:background="@drawable/bg_rounded">
+                    <!--  RECTANGLE: Rectangle 1  -->
+                    <LinearLayout android:id="@+id/rectangle_1" android:layout_width="31dp" android:layout_height="31dp"/>
+                </FrameLayout>
+                <!--  FRAME: Text  -->
+                <LinearLayout android:id="@+id/text" android:orientation="vertical" android:layout_width="256dp" android:layout_height="36dp">
+                    <!--  TEXT: Elynn Lee  -->
+                    <TextView android:id="@+id/elynn_lee" android:text="Elynn Lee" android:textSize="13.4399995803833sp" android:textColor="#FF000000" android:gravity="start" android:fontFamily="Inter" android:layout_width="256dp" android:layout_height="19dp"/>
+                    <!--  TEXT: email@fakedomain.net  -->
+                    <TextView android:id="@+id/email_fakedomain_net" android:text="email@fakedomain.net" android:textSize="11.519999504089355sp" android:textColor="#FF828282" android:gravity="start" android:fontFamily="Inter" android:layout_width="256dp" android:layout_height="17dp"/>
+                </LinearLayout>
+            </LinearLayout>
+            <!--  FRAME: Cell  -->
+            <LinearLayout android:id="@+id/cell" android:orientation="horizontal" android:layout_width="299dp" android:layout_height="51dp" android:background="@drawable/bg_rounded" android:paddingLeft="0dp" android:paddingTop="7.679999828338623dp" android:paddingRight="0dp" android:paddingBottom="7.679999828338623dp">
+                <!--  FRAME: Avatar  -->
+                <FrameLayout android:id="@+id/avatar" android:layout_width="31dp" android:layout_height="31dp" android:background="@drawable/bg_rounded">
+                    <!--  RECTANGLE: Rectangle 1  -->
+                    <LinearLayout android:id="@+id/rectangle_1" android:layout_width="31dp" android:layout_height="31dp"/>
+                </FrameLayout>
+                <!--  FRAME: Text  -->
+                <LinearLayout android:id="@+id/text" android:orientation="vertical" android:layout_width="256dp" android:layout_height="36dp">
+                    <!--  TEXT: Oscar Dum  -->
+                    <TextView android:id="@+id/oscar_dum" android:text="Oscar Dum" android:textSize="13.4399995803833sp" android:textColor="#FF000000" android:gravity="start" android:fontFamily="Inter" android:layout_width="256dp" android:layout_height="19dp"/>
+                    <!--  TEXT: email@fakedomain.net  -->
+                    <TextView android:id="@+id/email_fakedomain_net" android:text="email@fakedomain.net" android:textSize="11.519999504089355sp" android:textColor="#FF828282" android:gravity="start" android:fontFamily="Inter" android:layout_width="256dp" android:layout_height="17dp"/>
+                </LinearLayout>
+            </LinearLayout>
+            <!--  FRAME: Cell  -->
+            <LinearLayout android:id="@+id/cell" android:orientation="horizontal" android:layout_width="299dp" android:layout_height="51dp" android:background="@drawable/bg_rounded" android:paddingLeft="0dp" android:paddingTop="7.679999828338623dp" android:paddingRight="0dp" android:paddingBottom="7.679999828338623dp">
+                <!--  FRAME: Avatar  -->
+                <FrameLayout android:id="@+id/avatar" android:layout_width="31dp" android:layout_height="31dp" android:background="@drawable/bg_rounded">
+                    <!--  RECTANGLE: Rectangle 1  -->
+                    <LinearLayout android:id="@+id/rectangle_1" android:layout_width="31dp" android:layout_height="31dp"/>
+                </FrameLayout>
+                <!--  FRAME: Text  -->
+                <LinearLayout android:id="@+id/text" android:orientation="vertical" android:layout_width="256dp" android:layout_height="36dp">
+                    <!--  TEXT: Carlo Emilion  -->
+                    <TextView android:id="@+id/carlo_emilion" android:text="Carlo Emilion" android:textSize="13.4399995803833sp" android:textColor="#FF000000" android:gravity="start" android:fontFamily="Inter" android:layout_width="256dp" android:layout_height="19dp"/>
+                    <!--  TEXT: email@fakedomain.net  -->
+                    <TextView android:id="@+id/email_fakedomain_net" android:text="email@fakedomain.net" android:textSize="11.519999504089355sp" android:textColor="#FF828282" android:gravity="start" android:fontFamily="Inter" android:layout_width="256dp" android:layout_height="17dp"/>
+                </LinearLayout>
+            </LinearLayout>
+            <!--  FRAME: Cell  -->
+            <LinearLayout android:id="@+id/cell" android:orientation="horizontal" android:layout_width="299dp" android:layout_height="51dp" android:background="@drawable/bg_rounded" android:paddingLeft="0dp" android:paddingTop="7.679999828338623dp" android:paddingRight="0dp" android:paddingBottom="7.679999828338623dp">
+                <!--  FRAME: Avatar  -->
+                <FrameLayout android:id="@+id/avatar" android:layout_width="31dp" android:layout_height="31dp" android:background="@drawable/bg_rounded">
+                    <!--  RECTANGLE: Rectangle 1  -->
+                    <LinearLayout android:id="@+id/rectangle_1" android:layout_width="31dp" android:layout_height="31dp"/>
+                </FrameLayout>
+                <!--  FRAME: Text  -->
+                <LinearLayout android:id="@+id/text" android:orientation="vertical" android:layout_width="256dp" android:layout_height="36dp">
+                    <!--  TEXT: Daniel Jay Park  -->
+                    <TextView android:id="@+id/daniel_jay_park" android:text="Daniel Jay Park" android:textSize="13.4399995803833sp" android:textColor="#FF000000" android:gravity="start" android:fontFamily="Inter" android:layout_width="256dp" android:layout_height="19dp"/>
+                    <!--  TEXT: djpark@gmail.com  -->
+                    <TextView android:id="@+id/djpark_gmail_com" android:text="djpark@gmail.com" android:textSize="11.519999504089355sp" android:textColor="#FF828282" android:gravity="start" android:fontFamily="Inter" android:layout_width="256dp" android:layout_height="17dp"/>
+                </LinearLayout>
+            </LinearLayout>
+            <!--  FRAME: Cell  -->
+            <LinearLayout android:id="@+id/cell" android:orientation="horizontal" android:layout_width="299dp" android:layout_height="51dp" android:background="@drawable/bg_rounded" android:paddingLeft="0dp" android:paddingTop="7.679999828338623dp" android:paddingRight="0dp" android:paddingBottom="7.679999828338623dp">
+                <!--  FRAME: Avatar  -->
+                <FrameLayout android:id="@+id/avatar" android:layout_width="31dp" android:layout_height="31dp" android:background="@drawable/bg_rounded">
+                    <!--  RECTANGLE: Rectangle 1  -->
+                    <LinearLayout android:id="@+id/rectangle_1" android:layout_width="31dp" android:layout_height="31dp"/>
+                </FrameLayout>
+                <!--  FRAME: Text  -->
+                <LinearLayout android:id="@+id/text" android:orientation="vertical" android:layout_width="256dp" android:layout_height="36dp">
+                    <!--  TEXT: Mark Rojas  -->
+                    <TextView android:id="@+id/mark_rojas" android:text="Mark Rojas" android:textSize="13.4399995803833sp" android:textColor="#FF000000" android:gravity="start" android:fontFamily="Inter" android:layout_width="256dp" android:layout_height="19dp"/>
+                    <!--  TEXT: rojasmar@skiff.com  -->
+                    <TextView android:id="@+id/rojasmar_skiff_com" android:text="rojasmar@skiff.com" android:textSize="11.519999504089355sp" android:textColor="#FF828282" android:gravity="start" android:fontFamily="Inter" android:layout_width="256dp" android:layout_height="17dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <!--  TEXT: 이 옷을 활용했어요  -->
+        <TextView android:text="이 옷을 활용했어요" android:textSize="13.4399995803833sp" android:textColor="#FF000000" android:gravity="start" android:textStyle="bold" android:fontFamily="Inter" android:layout_width="106dp" android:layout_height="19dp"/>
+    </FrameLayout>
+    <!--  FRAME: cloth  -->
+    <FrameLayout android:id="@+id/cloth" android:layout_width="334dp" android:layout_height="381dp" android:background="@drawable/bg_rounded" android:paddingLeft="15.359999656677246dp" android:paddingTop="15.359999656677246dp" android:paddingRight="15.359999656677246dp" android:paddingBottom="15.359999656677246dp">
+        <!--  RECTANGLE: Gemini_Generated_Image_p5bw0np5bw0np5bw 1  -->
+        <LinearLayout android:id="@+id/cloth_image" android:layout_width="329dp" android:layout_height="355dp"/>
+        <!--  INSTANCE: Chevron left  -->
+        <FrameLayout android:id="@+id/chevron_left" android:layout_width="46dp" android:layout_height="46dp" android:background="#FFFFFFFF">
+            <!--  VECTOR: Icon  -->
+            <ImageView
+                android:src="@drawable/arrow_left_circle"
+                android:scaleType="fitXY"
+                android:layout_width="12dp"
+                android:layout_height="23dp"/>
+        </FrameLayout>
+        <!--  INSTANCE: Chevron right  -->
+        <FrameLayout android:id="@+id/chevron_right" android:layout_width="46dp" android:layout_height="46dp" android:background="#FFFFFFFF">
+            <!--  VECTOR: Icon  -->
+            <ImageView
+                android:id="@+id/icon"
+                android:src="@drawable/arrow_left_circle"
+                android:scaleType="fitXY"
+                android:layout_width="12dp"
+                android:layout_height="23dp"/>
+        </FrameLayout>
+        <!--  TEXT: 이렇게 입어보세요  -->
+        <TextView
+            android:text="이렇게 입어보세요"
+            android:textSize="15.359999656677246sp"
+            android:textColor="#FF000000"
+            android:gravity="start"
+            android:textStyle="bold"
+            android:fontFamily="Inter"
+            android:layout_width="117dp"
+            android:layout_height="22dp"/>
+    </FrameLayout>
+    <!--  FRAME: Button_Try  -->
+    <FrameLayout
+        android:id="@+id/button_try"
+        android:layout_width="325dp"
+        android:layout_height="39dp"
+        android:background="@drawable/bg_rounded"
+        android:paddingLeft="15.359999656677246dp"
+        android:paddingTop="0dp"
+        android:paddingRight="15.359999656677246dp"
+        android:paddingBottom="0dp">
+        <!--  FRAME: Frame 1  -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="77dp"
+            android:layout_height="23dp">
+            <!--  INSTANCE: Instagram  -->
+            <FrameLayout
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:background="#FFFFFFFF">
+                <!--  VECTOR: Icon  -->
+                <ImageView
+                    android:src="@drawable/"
+                    android:scaleType="fitXY"
+                    android:layout_width="19dp"
+                    android:layout_height="19dp"/>
+            </FrameLayout>
+            <!--  TEXT: 입어보기  -->
+            <TextView
+                android:text="입어보기"
+                android:textSize="13.4399995803833sp"
+                android:textColor="#FF000000"
+                android:gravity="start"
+                android:fontFamily="Inter"
+                android:layout_width="50dp"
+                android:layout_height="19dp"/>
+        </LinearLayout>
+    </FrameLayout>
+    <!--  FRAME: advice  -->
+    <LinearLayout android:id="@+id/advice" android:orientation="horizontal" android:layout_width="472dp" android:layout_height="114dp">
+        <!--  FRAME: Card  -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="246dp"
+            android:layout_height="114dp"
+            android:background="@drawable/bg_rounded"
+            android:paddingLeft="15.359999656677246dp"
+            android:paddingTop="15.359999656677246dp"
+            android:paddingRight="15.359999656677246dp"
+            android:paddingBottom="15.359999656677246dp">
+            <!--  TEXT: 이런 의상은 조심하세요!  -->
+            <TextView
+                android:text="이런 의상은 조심하세요!"
+                android:textSize="13.4399995803833sp"
+                android:textColor="#FF000000"
+                android:gravity="start"
+                android:textStyle="bold"
+                android:fontFamily="Inter"
+                android:layout_width="135dp"
+                android:layout_height="19dp"/>
+            <!--  TEXT: 슬리퍼, 트레이닝복 등의 편한 의상
+                        짧거나 노출이 있는 의상  -->
+            <TextView
+                android:id="@+id/warning_text"
+                android:text="슬리퍼, 트레이닝복 등의 편한 의상 짧거나 노출이 있는 의상"
+                android:textSize="13.4399995803833sp"
+                android:textColor="#FF000000"
+                android:gravity="start"
+                android:fontFamily="Inter"
+                android:layout_width="208dp"
+                android:layout_height="32dp"/>
+            <!--  TEXT: 다양한 지인이 모이는 자리이니 주의해야 해요.  -->
+            <TextView
+                android:id="@+id/warning_text_reason"
+                android:text="다양한 지인이 모이는 자리이니 주의해야 해요."
+                android:textSize="11.519999504089355sp"
+                android:textColor="#FF828282"
+                android:gravity="start"
+                android:fontFamily="Inter"
+                android:layout_width="220dp"
+                android:layout_height="17dp"/>
+        </LinearLayout>
+        <!--  FRAME: Card  -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="215dp"
+            android:layout_height="114dp"
+            android:background="@drawable/bg_rounded"
+            android:paddingLeft="15.359999656677246dp"
+            android:paddingTop="15.359999656677246dp"
+            android:paddingRight="15.359999656677246dp"
+            android:paddingBottom="15.359999656677246dp">
+            <!--  TEXT: 이런 색상은 조심하세요!  -->
+            <TextView
+                android:text="이런 색상은 조심하세요!"
+                android:textSize="13.4399995803833sp"
+                android:textColor="#FF000000"
+                android:gravity="start"
+                android:textStyle="bold"
+                android:fontFamily="Inter"
+                android:layout_width="135dp"
+                android:layout_height="19dp"/>
+            <!--  TEXT: 올블랙 착장
+                        넓은 면적의 화이트  -->
+            <TextView
+                android:id="@+id/warning_color"
+                android:text="올블랙 착장 넓은 면적의 화이트"
+                android:textSize="13.4399995803833sp"
+                android:textColor="#FF000000"
+                android:gravity="start"
+                android:fontFamily="Inter"
+                android:layout_width="125dp"
+                android:layout_height="32dp"/>
+            <!--  TEXT: 화이트는 신부의 메인 컬러입니다.  -->
+            <TextView
+                android:id="@+id/warning_color_reason"
+                android:text="화이트는 신부의 메인 컬러입니다."
+                android:textSize="11.519999504089355sp"
+                android:textColor="#FF828282"
+                android:gravity="start"
+                android:fontFamily="Inter"
+                android:layout_width="161dp"
+                android:layout_height="17dp"/>
+        </LinearLayout>
+    </LinearLayout>
+    <!--  FRAME: context  -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="319dp"
+        android:layout_height="31dp">
+        <!--  FRAME: wedding  -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="105dp"
+            android:layout_height="31dp"
+            android:background="@drawable/bg_rounded"
+            android:paddingLeft="13.4399995803833dp"
+            android:paddingTop="5.759999752044678dp"
+            android:paddingRight="13.4399995803833dp"
+            android:paddingBottom="5.759999752044678dp">
+            <!--  TEXT: 결혼식 하객룩  -->
+            <TextView
+                android:text="결혼식 하객룩"
+                android:textSize="13.4399995803833sp"
+                android:textColor="#FFFFFFFF"
+                android:gravity="start"
+                android:fontFamily="Inter"
+                android:layout_width="78dp"
+                android:layout_height="19dp"/>
+        </LinearLayout>
+        <!--  FRAME: funeral  -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="105dp"
+            android:layout_height="31dp"
+            android:background="@drawable/bg_rounded"
+            android:paddingLeft="13.4399995803833dp"
+            android:paddingTop="5.759999752044678dp"
+            android:paddingRight="13.4399995803833dp"
+            android:paddingBottom="5.759999752044678dp">
+            <!--  TEXT: 장례식장 조문  -->
+            <TextView
+                android:text="장례식장 조문"
+                android:textSize="13.4399995803833sp"
+                android:textColor="#FF000000"
+                android:gravity="start"
+                android:fontFamily="Inter"
+                android:layout_width="78dp"
+                android:layout_height="19dp"/>
+        </LinearLayout>
+        <!--  FRAME: interview  -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="52dp"
+            android:layout_height="31dp"
+            android:background="@drawable/bg_rounded"
+            android:paddingLeft="13.4399995803833dp"
+            android:paddingTop="5.759999752044678dp"
+            android:paddingRight="13.4399995803833dp"
+            android:paddingBottom="5.759999752044678dp">
+            <!--  TEXT: 면접  -->
+            <TextView
+                android:text="면접"
+                android:textSize="13.4399995803833sp"
+                android:textColor="#FF000000"
+                android:gravity="start"
+                android:fontFamily="Inter"
+                android:layout_width="25dp"
+                android:layout_height="19dp"/>
+        </LinearLayout>
+    </LinearLayout>
+    <!--  FRAME: Header  -->
+    <FrameLayout
+        android:layout_width="360dp"
+        android:layout_height="54dp">
+        <!--  TEXT: 중요한 약속이 있나요?  -->
+        <TextView
+            android:text="중요한 약속이 있나요?"
+            android:textSize="19.19999885559082sp"
+            android:textColor="#FF000000"
+            android:gravity="center_horizontal"
+            android:textStyle="bold"
+            android:fontFamily="Inter"
+            android:layout_width="175dp"
+            android:layout_height="27dp"/>
+        <!--  INSTANCE: Arrow left-circle  -->
+        <FrameLayout
+            android:id="@+id/arrow_left_circle"
+            android:layout_width="31dp"
+            android:layout_height="31dp"
+            android:background="#FFFFFFFF">
+            <!--  VECTOR: Icon  -->
+            <ImageView
+                android:src="@drawable/arrow_left_circle"
+                android:scaleType="fitXY"
+                android:layout_width="26dp"
+                android:layout_height="26dp"/>
+        </FrameLayout>
+    </FrameLayout>
+</RelativeLayout>

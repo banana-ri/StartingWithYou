@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#FFFFFFFF">
+    <!--  Frame: My_Closet (360x780)  -->
+
+    <LinearLayout
+        android:paddingTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--  FRAME: Header  -->
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
+
+            <!--  Button: Arrow left-circle  -->
+            <ImageButton
+                android:layout_marginStart="10dp"
+                android:id="@+id/arrow_left_circle"
+                android:layout_width="31dp"
+                android:layout_height="31dp"
+                android:background="#FFFFFFFF"
+                android:src="@drawable/arrow_left_circle" />
+
+            <!--  TEXT: 나의 옷장  -->
+            <TextView
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal"
+                android:text="나의 옷장"
+                android:textSize="19sp"
+                android:textColor="#000000"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <!--  FRAME: Pills  -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:layout_margin="10dp">
+
+            <!--  FRAME: All  -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/all"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rounded_all"
+                android:text="전체"
+                android:textSize="13sp"
+                android:textColor="#FFFFFF"
+                android:layout_margin="10dp"/>
+
+            <!--  FRAME: Top  -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/top"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rounded_top"
+                android:text="상의"
+                android:textSize="13sp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_margin="10dp"/>
+
+            <!--  FRAME: Bottoms  -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bottoms"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rounded_bottoms"
+                android:text="하의"
+                android:textSize="13sp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_margin="10dp"/>
+
+            <!--  FRAME: Acc  -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/acc"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rounded_acc"
+                android:text="악세사리"
+                android:textSize="13sp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_margin="10dp"/>
+
+            <!--  FRAME: Bag  -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bag"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rounded_bag"
+                android:text="가방"
+                android:textSize="13sp"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_margin="10dp"/>
+        </LinearLayout>
+
+        <!--  FRAME: Cards  -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="horizontal"
+            android:columnCount="3">
+
+            <ImageButton
+                android:id="@+id/card_1"
+                android:src="@drawable/image"
+                android:scaleType="fitCenter"/>
+            <ImageButton
+                android:id="@+id/card_2"
+                android:src="@drawable/image"
+                android:scaleType="fitCenter"/>
+            <ImageButton
+                android:id="@+id/card_3"
+                android:src="@drawable/image"
+                android:scaleType="fitCenter"/>
+            <ImageButton
+                android:id="@+id/card_4"
+                android:src="@drawable/image"
+                android:scaleType="fitCenter"/>
+            <ImageButton
+                android:id="@+id/card_5"
+                android:src="@drawable/image"
+                android:scaleType="fitCenter"/>
+            <ImageButton
+                android:id="@+id/card_6"
+                android:src="@drawable/image"
+                android:scaleType="fitCenter"/>
+            <ImageButton
+                android:id="@+id/card_7"
+                android:src="@drawable/image"
+                android:scaleType="fitCenter"/>
+            <ImageButton
+                android:id="@+id/card_8"
+                android:src="@drawable/image"
+                android:scaleType="fitCenter"/>
+
+        </GridLayout>
+    </LinearLayout>
+
+    <!--  FRAME: Icon Button  -->
+    <ImageView
+        android:id="@+id/icon_button"
+        android:orientation="horizontal"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:gravity="center"
+        android:src="@drawable/plus_button"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="15dp"
+        android:importantForAccessibility="no">
+    </ImageView>
+</RelativeLayout>

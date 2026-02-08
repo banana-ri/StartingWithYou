@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#FFFFFFFF">
+    <!--  Frame: My_Closet_Details (360x780)  -->
+    <!--  FRAME: Button_recommend  -->
+    <FrameLayout android:id="@+id/button_recommend" android:layout_width="152dp" android:layout_height="39dp" android:background="@drawable/bg_rounded" android:paddingLeft="15.359999656677246dp" android:paddingTop="0dp" android:paddingRight="15.359999656677246dp" android:paddingBottom="0dp">
+        <!--  GROUP: Group 1  -->
+        <View android:id="@+id/group_1" android:layout_width="78dp" android:layout_height="23dp"/>
+        <!-- 이 부분 그룹 해제하고 다시 xml 변환해서 채워넣기-->
+    </FrameLayout>
+    <!--  FRAME: Button_Save  -->
+    <FrameLayout android:id="@+id/button_save" android:layout_width="152dp" android:layout_height="39dp" android:background="@drawable/bg_rounded" android:paddingLeft="15.359999656677246dp" android:paddingTop="0dp" android:paddingRight="15.359999656677246dp" android:paddingBottom="0dp">
+        <!--  GROUP: Group 1  -->
+        <View android:id="@+id/group_1" android:layout_width="76dp" android:layout_height="23dp"/>
+    </FrameLayout>
+    <!--  FRAME: Pills_length  -->
+    <LinearLayout android:id="@+id/pills_length" android:orientation="horizontal" android:layout_width="280dp" android:layout_height="35dp">
+        <!--  FRAME: Pill  -->
+        <LinearLayout android:id="@+id/pill" android:orientation="horizontal" android:layout_width="40dp" android:layout_height="31dp" android:background="@drawable/bg_rounded" android:paddingLeft="13.4399995803833dp" android:paddingTop="5.759999752044678dp" android:paddingRight="13.4399995803833dp" android:paddingBottom="5.759999752044678dp">
+            <!--  TEXT: 긺  -->
+            <TextView android:id="@+id/_" android:text="긺" android:textSize="13.4399995803833sp" android:textColor="#FFFFFFFF" android:gravity="start" android:fontFamily="Inter" android:layout_width="13dp" android:layout_height="19dp"/>
+        </LinearLayout>
+        <!--  FRAME: Pill  -->
+        <LinearLayout android:id="@+id/pill" android:orientation="horizontal" android:layout_width="68dp" android:layout_height="31dp" android:background="@drawable/bg_rounded" android:paddingLeft="13.4399995803833dp" android:paddingTop="5.759999752044678dp" android:paddingRight="13.4399995803833dp" android:paddingBottom="5.759999752044678dp">
+            <!--  TEXT: 약간 긺  -->
+            <TextView android:id="@+id/____" android:text="약간 긺" android:textSize="13.4399995803833sp" android:textColor="#FF000000" android:gravity="start" android:fontFamily="Inter" android:layout_width="41dp" android:layout_height="19dp"/>
+        </LinearLayout>
+        <!--  FRAME: Pill  -->
+        <LinearLayout android:id="@+id/pill" android:orientation="horizontal" android:layout_width="52dp" android:layout_height="31dp" android:background="@drawable/bg_rounded" android:paddingLeft="13.4399995803833dp" android:paddingTop="5.759999752044678dp" android:paddingRight="13.4399995803833dp" android:paddingBottom="5.759999752044678dp">
+            <!--  TEXT: 보통  -->
+            <TextView android:id="@+id/__" android:text="보통" android:textSize="13.4399995803833sp" android:textColor="#FF000000" android:gravity="start" android:fontFamily="Inter" android:layout_width="25dp" android:layout_height="19dp"/>
+        </LinearLayout>
+        <!--  FRAME: Pill  -->
+        <LinearLayout android:id="@+id/pill" android:orientation="horizontal" android:layout_width="81dp" android:layout_height="31dp" android:background="@drawable/bg_rounded" android:paddingLeft="13.4399995803833dp" android:paddingTop="5.759999752044678dp" android:paddingRight="13.4399995803833dp" android:paddingBottom="5.759999752044678dp">
+            <!--  TEXT: 약간 짧음  -->
+            <TextView android:id="@+id/_____" android:text="약간 짧음" android:textSize="13.4399995803833sp" android:textColor="#FF000000" android:gravity="start" android:fontFamily="Inter" android:layout_width="54dp" android:layout_height="19dp"/>
+        </LinearLayout>
+        <!--  FRAME: Pill  -->
+        <LinearLayout android:id="@+id/pill" android:orientation="horizontal" android:layout_width="65dp" android:layout_height="31dp" android:background="@drawable/bg_rounded" android:paddingLeft="13.4399995803833dp" android:paddingTop="5.759999752044678dp" android:paddingRight="13.4399995803833dp" android:paddingBottom="5.759999752044678dp">
+            <!--  TEXT: 사계절  -->
+            <TextView android:id="@+id/___" android:text="사계절" android:textSize="13.4399995803833sp" android:textColor="#FF000000" android:gravity="start" android:fontFamily="Inter" android:layout_width="38dp" android:layout_height="19dp"/>
+        </LinearLayout>
+    </LinearLayout>
+    <!--  FRAME: Pills_thickness  -->
+    <LinearLayout android:id="@+id/pills_thickness" android:orientation="horizontal" android:layout_width="280dp" android:layout_height="35dp">
+        <!--  FRAME: Pill  -->
+        <LinearLayout android:id="@+id/pill" android:orientation="horizontal" android:layout_width="52dp" android:layout_height="31dp" android:background="@drawable/bg_rounded" android:paddingLeft="13.4399995803833dp" android:paddingTop="5.759999752044678dp" android:paddingRight="13.4399995803833dp" android:paddingBottom="5.759999752044678dp">
+            <!--  TEXT: 얇음  -->
+            <TextView android:id="@+id/__" android:text="얇음" android:textSize="13.4399995803833sp" android:textColor="#FFFFFFFF" android:gravity="start" android:fontFamily="Inter" android:layout_width="25dp" android:layout_height="19dp"/>
+        </LinearLayout>
+        <!--  FRAME: Pill  -->
+        <LinearLayout android:id="@+id/pill" android:orientation="horizontal" android:layout_width="81dp" android:layout_height="31dp" android:background="@drawable/bg_rounded" android:paddingLeft="13.4399995803833dp" android:paddingTop="5.759999752044678dp" android:paddingRight="13.4399995803833dp" android:paddingBottom="5.759999752044678dp">
+            <!--  TEXT: 약간 얇음  -->
+            <TextView android:id="@+id/_____" android:text="약간 얇음" android:textSize="13.4399995803833sp" android:textColor="#FF000000" android:gravity="start" android:fontFamily="Inter" android:layout_width="54dp" android:layout_height="19dp"/>
+        </LinearLayout>
+        <!--  FRAME: Pill  -->
+        <LinearLayout android:id="@+id/pill" android:orientation="horizontal" android:layout_width="52dp" android:layout_height="31dp" android:background="@drawable/bg_rounded" android:paddingLeft="13.4399995803833dp" android:paddingTop="5.759999752044678dp" android:paddingRight="13.4399995803833dp" android:paddingBottom="5.759999752044678dp">
+            <!--  TEXT: 보통  -->
+            <TextView android:id="@+id/__" android:text="보통" android:textSize="13.4399995803833sp" android:textColor="#FF000000" android:gravity="start" android:fontFamily="Inter" android:layout_width="25dp" android:layout_height="19dp"/>
+        </LinearLayout>
+        <!--  FRAME: Pill  -->
+        <LinearLayout android:id="@+id/pill" android:orientation="horizontal" android:layout_width="93dp" android:layout_height="31dp" android:background="@drawable/bg_rounded" android:paddingLeft="13.4399995803833dp" android:paddingTop="5.759999752044678dp" android:paddingRight="13.4399995803833dp" android:paddingBottom="5.759999752044678dp">
+            <!--  TEXT: 약간 두꺼움  -->
+            <TextView android:id="@+id/______" android:text="약간 두꺼움" android:textSize="13.4399995803833sp" android:textColor="#FF000000" android:gravity="start" android:fontFamily="Inter" android:layout_width="66dp" android:layout_height="19dp"/>
+        </LinearLayout>
+        <!--  FRAME: Pill  -->
+        <LinearLayout android:id="@+id/pill" android:orientation="horizontal" android:layout_width="65dp" android:layout_height="31dp" android:background="@drawable/bg_rounded" android:paddingLeft="13.4399995803833dp" android:paddingTop="5.759999752044678dp" android:paddingRight="13.4399995803833dp" android:paddingBottom="5.759999752044678dp">
+            <!--  TEXT: 사계절  -->
+            <TextView android:id="@+id/___" android:text="사계절" android:textSize="13.4399995803833sp" android:textColor="#FF000000" android:gravity="start" android:fontFamily="Inter" android:layout_width="38dp" android:layout_height="19dp"/>
+        </LinearLayout>
+    </LinearLayout>
+    <!--  FRAME: Pills_part  -->
+    <LinearLayout android:id="@+id/pills_part" android:orientation="horizontal" android:layout_width="280dp" android:layout_height="35dp">
+        <!--  FRAME: Pill  -->
+        <LinearLayout android:id="@+id/pill" android:orientation="horizontal" android:layout_width="52dp" android:layout_height="31dp" android:background="@drawable/bg_rounded" android:paddingLeft="13.4399995803833dp" android:paddingTop="5.759999752044678dp" android:paddingRight="13.4399995803833dp" android:paddingBottom="5.759999752044678dp">
+            <!--  TEXT: 상의  -->
+            <TextView android:id="@+id/__" android:text="상의" android:textSize="13.4399995803833sp" android:textColor="#FFFFFFFF" android:gravity="start" android:fontFamily="Inter" android:layout_width="25dp" android:layout_height="19dp"/>
+        </LinearLayout>
+        <!--  FRAME: Pill  -->
+        <LinearLayout android:id="@+id/pill" android:orientation="horizontal" android:layout_width="52dp" android:layout_height="31dp" android:background="@drawable/bg_rounded" android:paddingLeft="13.4399995803833dp" android:paddingTop="5.759999752044678dp" android:paddingRight="13.4399995803833dp" android:paddingBottom="5.759999752044678dp">
+            <!--  TEXT: 하의  -->
+            <TextView android:id="@+id/__" android:text="하의" android:textSize="13.4399995803833sp" android:textColor="#FF000000" android:gravity="start" android:fontFamily="Inter" android:layout_width="25dp" android:layout_height="19dp"/>
+        </LinearLayout>
+        <!--  FRAME: Pill  -->
+        <LinearLayout android:id="@+id/pill" android:orientation="horizontal" android:layout_width="77dp" android:layout_height="31dp" android:background="@drawable/bg_rounded" android:paddingLeft="13.4399995803833dp" android:paddingTop="5.759999752044678dp" android:paddingRight="13.4399995803833dp" android:paddingBottom="5.759999752044678dp">
+            <!--  TEXT: 악세사리  -->
+            <TextView android:id="@+id/____" android:text="악세사리" android:textSize="13.4399995803833sp" android:textColor="#FF000000" android:gravity="start" android:fontFamily="Inter" android:layout_width="50dp" android:layout_height="19dp"/>
+        </LinearLayout>
+        <!--  FRAME: Pill  -->
+        <LinearLayout android:id="@+id/pill" android:orientation="horizontal" android:layout_width="52dp" android:layout_height="31dp" android:background="@drawable/bg_rounded" android:paddingLeft="13.4399995803833dp" android:paddingTop="5.759999752044678dp" android:paddingRight="13.4399995803833dp" android:paddingBottom="5.759999752044678dp">
+            <!--  TEXT: 가방  -->
+            <TextView android:id="@+id/__" android:text="가방" android:textSize="13.4399995803833sp" android:textColor="#FF000000" android:gravity="start" android:fontFamily="Inter" android:layout_width="25dp" android:layout_height="19dp"/>
+        </LinearLayout>
+        <!--  FRAME: Pill  -->
+        <LinearLayout android:id="@+id/pill" android:orientation="horizontal" android:layout_width="52dp" android:layout_height="31dp" android:background="@drawable/bg_rounded" android:paddingLeft="13.4399995803833dp" android:paddingTop="5.759999752044678dp" android:paddingRight="13.4399995803833dp" android:paddingBottom="5.759999752044678dp">
+            <!--  TEXT: 신발  -->
+            <TextView android:id="@+id/__" android:text="신발" android:textSize="13.4399995803833sp" android:textColor="#FF000000" android:gravity="start" android:fontFamily="Inter" android:layout_width="25dp" android:layout_height="19dp"/>
+        </LinearLayout>
+    </LinearLayout>
+    <!--  FRAME: Pills_season  -->
+    <LinearLayout android:id="@+id/pills_season" android:orientation="horizontal" android:layout_width="280dp" android:layout_height="35dp">
+        <!--  FRAME: Pill  -->
+        <LinearLayout android:id="@+id/pill" android:orientation="horizontal" android:layout_width="40dp" android:layout_height="31dp" android:background="@drawable/bg_rounded" android:paddingLeft="13.4399995803833dp" android:paddingTop="5.759999752044678dp" android:paddingRight="13.4399995803833dp" android:paddingBottom="5.759999752044678dp">
+            <!--  TEXT: 봄  -->
+            <TextView android:id="@+id/_" android:text="봄" android:textSize="13.4399995803833sp" android:textColor="#FFFFFFFF" android:gravity="start" android:fontFamily="Inter" android:layout_width="13dp" android:layout_height="19dp"/>
+        </LinearLayout>
+        <!--  FRAME: Pill  -->
+        <LinearLayout android:id="@+id/pill" android:orientation="horizontal" android:layout_width="52dp" android:layout_height="31dp" android:background="@drawable/bg_rounded" android:paddingLeft="13.4399995803833dp" android:paddingTop="5.759999752044678dp" android:paddingRight="13.4399995803833dp" android:paddingBottom="5.759999752044678dp">
+            <!--  TEXT: 여름  -->
+            <TextView android:id="@+id/__" android:text="여름" android:textSize="13.4399995803833sp" android:textColor="#FF000000" android:gravity="start" android:fontFamily="Inter" android:layout_width="25dp" android:layout_height="19dp"/>
+        </LinearLayout>
+        <!--  FRAME: Pill  -->
+        <LinearLayout android:id="@+id/pill" android:orientation="horizontal" android:layout_width="52dp" android:layout_height="31dp" android:background="@drawable/bg_rounded" android:paddingLeft="13.4399995803833dp" android:paddingTop="5.759999752044678dp" android:paddingRight="13.4399995803833dp" android:paddingBottom="5.759999752044678dp">
+            <!--  TEXT: 가을  -->
+            <TextView android:id="@+id/__" android:text="가을" android:textSize="13.4399995803833sp" android:textColor="#FFFFFFFF" android:gravity="start" android:fontFamily="Inter" android:layout_width="25dp" android:layout_height="19dp"/>
+        </LinearLayout>
+        <!--  FRAME: Pill  -->
+        <LinearLayout android:id="@+id/pill" android:orientation="horizontal" android:layout_width="52dp" android:layout_height="31dp" android:background="@drawable/bg_rounded" android:paddingLeft="13.4399995803833dp" android:paddingTop="5.759999752044678dp" android:paddingRight="13.4399995803833dp" android:paddingBottom="5.759999752044678dp">
+            <!--  TEXT: 겨울  -->
+            <TextView android:id="@+id/__" android:text="겨울" android:textSize="13.4399995803833sp" android:textColor="#FF000000" android:gravity="start" android:fontFamily="Inter" android:layout_width="25dp" android:layout_height="19dp"/>
+        </LinearLayout>
+        <!--  FRAME: Pill  -->
+        <LinearLayout android:id="@+id/pill" android:orientation="horizontal" android:layout_width="65dp" android:layout_height="31dp" android:background="@drawable/bg_rounded" android:paddingLeft="13.4399995803833dp" android:paddingTop="5.759999752044678dp" android:paddingRight="13.4399995803833dp" android:paddingBottom="5.759999752044678dp">
+            <!--  TEXT: 사계절  -->
+            <TextView android:id="@+id/___" android:text="사계절" android:textSize="13.4399995803833sp" android:textColor="#FF000000" android:gravity="start" android:fontFamily="Inter" android:layout_width="38dp" android:layout_height="19dp"/>
+        </LinearLayout>
+    </LinearLayout>
+    <!--  FRAME: Image  -->
+    <LinearLayout android:id="@+id/image" android:orientation="vertical" android:layout_width="316dp" android:layout_height="316dp" android:background="#FFE3E3E3"/>
+    <!--  TEXT: 상세 정보 확인 / 편집  -->
+    <TextView android:id="@+id/_____________" android:text="상세 정보 확인 / 편집" android:textSize="15.359999656677246sp" android:textColor="#FF000000" android:gravity="center_horizontal" android:textStyle="bold" android:fontFamily="Inter" android:layout_width="135dp" android:layout_height="23dp"/>
+    <!--  TEXT: 계절  -->
+    <TextView android:id="@+id/__" android:text="계절" android:textSize="15.359999656677246sp" android:textColor="#FF000000" android:gravity="center_horizontal" android:textStyle="bold" android:fontFamily="Inter" android:layout_width="40dp" android:layout_height="23dp"/>
+    <!--  TEXT: 부분  -->
+    <TextView android:id="@+id/__" android:text="부분" android:textSize="15.359999656677246sp" android:textColor="#FF000000" android:gravity="center_horizontal" android:textStyle="bold" android:fontFamily="Inter" android:layout_width="40dp" android:layout_height="23dp"/>
+    <!--  TEXT: 두께  -->
+    <TextView android:id="@+id/__" android:text="두께" android:textSize="15.359999656677246sp" android:textColor="#FF000000" android:gravity="center_horizontal" android:textStyle="bold" android:fontFamily="Inter" android:layout_width="40dp" android:layout_height="23dp"/>
+    <!--  TEXT: 기장  -->
+    <TextView android:id="@+id/__" android:text="기장" android:textSize="15.359999656677246sp" android:textColor="#FF000000" android:gravity="center_horizontal" android:textStyle="bold" android:fontFamily="Inter" android:layout_width="40dp" android:layout_height="23dp"/>
+    <!--  FRAME: Header  -->
+    <FrameLayout android:id="@+id/header" android:layout_width="360dp" android:layout_height="54dp">
+        <!--  TEXT: 나의 옷장  -->
+        <TextView android:id="@+id/_____" android:text="나의 옷장" android:textSize="19.19999885559082sp" android:textColor="#FF000000" android:gravity="center_horizontal" android:textStyle="bold" android:fontFamily="Inter" android:layout_width="74dp" android:layout_height="27dp"/>
+        <!--  INSTANCE: Arrow left-circle  -->
+        <FrameLayout android:id="@+id/arrow_left_circle" android:layout_width="31dp" android:layout_height="31dp" android:background="#FFFFFFFF">
+            <!--  VECTOR: Icon  -->
+            <ImageView android:id="@+id/icon" android:src="@drawable/ic_icon" android:scaleType="fitXY" android:layout_width="26dp" android:layout_height="26dp"/>
+        </FrameLayout>
+    </FrameLayout>
+</RelativeLayout>
