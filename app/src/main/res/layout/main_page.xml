@@ -50,6 +50,7 @@
         android:textSize="23sp"
         android:textStyle="bold" />
 
+    <!--나의 옷장-->
     <LinearLayout
         android:id="@+id/button_mycloset"
         android:orientation="horizontal"
@@ -78,7 +79,8 @@
                 android:layout_height="25dp"
                 android:importantForAccessibility="no"
                 android:scaleType="fitXY"
-                android:src="@drawable/archive" />
+                android:src="@drawable/archive"
+                android:layout_marginEnd="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -90,6 +92,7 @@
         </LinearLayout>
     </LinearLayout>
 
+    <!-- 상황 더하기 -->
     <LinearLayout
         android:id="@+id/button_addcontext"
         android:orientation="horizontal"
@@ -97,7 +100,7 @@
         android:layout_height="39dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="52dp"
+        android:layout_marginEnd="50dp"
         android:layout_marginBottom="90dp"
         android:background="@drawable/bg_rounded_color"
         android:gravity="center">
@@ -113,7 +116,8 @@
                 android:layout_height="25dp"
                 android:importantForAccessibility="no"
                 android:scaleType="fitXY"
-                android:src="@drawable/plus" /> <!-- 이거 다시 뽑기 -->
+                android:src="@drawable/plus"
+                android:layout_marginEnd="10dp"/>
             <!--  TEXT: 상황 더하기  -->
             <TextView
                 android:layout_width="wrap_content"
@@ -125,6 +129,7 @@
         </LinearLayout>
     </LinearLayout>
 
+    <!-- 입어보기 -->
     <LinearLayout
         android:id="@+id/button_try"
         android:orientation="horizontal"
@@ -148,7 +153,8 @@
                 android:layout_height="25dp"
                 android:importantForAccessibility="no"
                 android:scaleType="fitXY"
-                android:src="@drawable/instagram" />
+                android:src="@drawable/instagram"
+                android:layout_marginEnd="10dp"/>
             <!--  TEXT: 입어보기  -->
             <TextView
                 android:layout_width="wrap_content"
@@ -203,20 +209,9 @@
         android:layout_marginBottom="15dp"
         android:src="@drawable/setting_button"
         app:borderWidth="0dp"
-        app:fabSize="normal"/>
-
-
-    <ImageView
-        android:id="@+id/fab_setting_button"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="17dp"
-        android:layout_marginBottom="15dp"
-        android:importantForAccessibility="no"
-        android:scaleType="fitXY"
-        android:src="@drawable/setting_button" />
+        app:fabSize="normal"
+        />
+    <!-- setContentDescription="@string/description" 뭐임? -->
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -228,7 +223,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="33dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="33dp"
         android:layout_marginBottom="560dp"
         android:background="@drawable/rounded_border"
@@ -236,12 +231,13 @@
         android:paddingLeft="24dp"
         android:paddingTop="24dp"
         android:paddingRight="24dp"
-        android:paddingBottom="24dp">
+        android:paddingBottom="20dp">
         <!--  TEXT: Text Heading  -->
         <TextView
             android:id="@+id/heading_weather"
             android:layout_width="271dp"
             android:layout_height="29dp"
+            android:layout_marginBottom="5dp"
             android:gravity="start"
             android:text="19°C / 11°C"
             android:textColor="#1B1B1B"
@@ -252,13 +248,14 @@
         <View
             android:layout_width="256dp"
             android:layout_height="1dp"
-            android:background="#CECECE"/>
+            android:background="#CECECE" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingTop="15dp">
+            android:paddingTop="10dp">
 
             <!--  RECTANGLE: 날씨 이미지  -->
             <ImageView
@@ -273,8 +270,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingStart="10dp"
-                android:paddingTop="10dp">
+                android:paddingStart="10dp">
                 <!--  TEXT: 날씨 총평  -->
                 <TextView
                     android:id="@+id/weather_overview"
