@@ -1,6 +1,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFFFF">
@@ -12,211 +13,282 @@
 
         <!--  FRAME: Header  -->
         <RelativeLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:layout_marginBottom="20dp">
+            android:orientation="horizontal">
 
             <!--  Button: Arrow left-circle  -->
             <ImageButton
-                android:layout_marginStart="10dp"
                 android:id="@+id/arrow_left_circle"
                 android:layout_width="31dp"
                 android:layout_height="31dp"
+                android:layout_marginStart="10dp"
                 android:background="#FFFFFFFF"
                 android:src="@drawable/arrow_left_circle" />
 
             <!--  TEXT: 중요한 약속이 있나요?  -->
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_gravity="center_horizontal"
-                android:text="중요한 약속이 있나요?"
-                android:textSize="19sp"
-                android:textColor="#000000"
                 android:gravity="center_horizontal"
-                android:textStyle="bold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:text="중요한 약속이 있나요?"
+                android:textColor="#000000"
+                android:textSize="19sp"
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <!-- 상황 선택 -->
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="none"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp">
+            android:layout_margin="20dp"
+            android:scrollbars="none">
 
             <!-- 상황 칩-->
             <com.google.android.material.chip.ChipGroup
                 android:id="@+id/chipGroup_contents"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:singleLine="true"
-                app:singleSelection="true"
-                app:selectionRequired="true"
+                android:layout_gravity="start"
                 app:chipSpacingHorizontal="8dp"
-                android:layout_gravity="start">
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_contents_wedding_guest"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="결혼식 하객룩"
-                android:checked="true"
-                app:chipBackgroundColor="@color/chip_bg_state"
-                android:textColor="@color/chip_text_state"
-                app:chipStrokeWidth="0dp"/>
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_contents_condolences"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="장례식장 조문"
-                app:chipBackgroundColor="@color/chip_bg_state"
-                android:textColor="@color/chip_text_state"
-                app:chipStrokeWidth="0dp"/>
+                app:selectionRequired="true"
+                app:singleLine="true"
+                app:singleSelection="true">
 
                 <com.google.android.material.chip.Chip
-                android:id="@+id/chip_contents_interview"
-                style="@style/Widget.MaterialComponents.Chip.Choice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="면접"
-                app:chipBackgroundColor="@color/chip_bg_state"
-                android:textColor="@color/chip_text_state"
-                app:chipStrokeWidth="0dp"/>
+                    android:id="@+id/chip_contents_wedding_guest"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="결혼식 하객룩"
+                    android:textColor="@color/chip_text_state"
+                    app:chipBackgroundColor="@color/chip_bg_state"
+                    app:chipStrokeWidth="0dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_contents_condolences"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="장례식장 조문"
+                    android:textColor="@color/chip_text_state"
+                    app:chipBackgroundColor="@color/chip_bg_state"
+                    app:chipStrokeWidth="0dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_contents_interview"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="면접"
+                    android:textColor="@color/chip_text_state"
+                    app:chipBackgroundColor="@color/chip_bg_state"
+                    app:chipStrokeWidth="0dp" />
 
             </com.google.android.material.chip.ChipGroup>
         </HorizontalScrollView>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:scrollbars="none">
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="114dp"
-                android:background="@drawable/bg_rounded"
-                android:orientation="vertical"
-                android:paddingLeft="15dp"
-                android:paddingTop="15dp"
-                android:paddingRight="15dp"
-                android:paddingBottom="15dp">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                <TextView
+                <!-- 의상 주의 -->
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="start"
-                    android:text="이런 의상은 조심하세요!"
-                    android:textColor="#FF000000"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
+                    android:layout_height="114dp"
+                    android:background="@drawable/rounded_border"
+                    android:orientation="vertical"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="15dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="start"
-                    android:text=" · 슬리퍼, 트레이닝복 등의 편한 의상"
-                    android:textColor="#FF000000"
-                    android:textSize="13sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="이런 의상은 조심하세요!"
+                        android:textColor="#FF000000"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="start"
-                    android:text=" · 짧거나 노출이 있는 의상"
-                    android:textColor="#FF000000"
-                    android:textSize="13sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text=" · 슬리퍼, 트레이닝복 등의 편한 의상"
+                        android:textColor="#FF000000"
+                        android:textSize="13sp" />
 
-                <TextView
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text=" · 짧거나 노출이 있는 의상"
+                        android:textColor="#FF000000"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="다양한 지인이 모이는 자리이니 주의해야 해요."
+                        android:textColor="#FF828282"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <!-- 색상 주의 -->
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="start"
-                    android:text="다양한 지인이 모이는 자리이니 주의해야 해요."
-                    android:textColor="#FF828282"
-                    android:textSize="12sp" />
+                    android:layout_height="114dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/rounded_border"
+                    android:orientation="vertical"
+                    android:paddingLeft="15dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingBottom="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="이런 색상은 조심하세요!"
+                        android:textColor="#FF000000"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text=" · 올블랙 착장"
+                        android:textColor="#FF000000"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text=" · 넓은 면적의 화이트"
+                        android:textColor="#FF000000"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:text="화이트는 신부의 색으로 피하는 것이 좋아요."
+                        android:textColor="#FF828282"
+                        android:textSize="12sp" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
 
+        </HorizontalScrollView>
 
-        <FrameLayout
-            android:layout_width="334dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="381dp"
-            android:background="@drawable/bg_rounded"
-            android:paddingLeft="15dp"
-            android:paddingTop="15dp"
-            android:paddingRight="15dp"
-            android:paddingBottom="15dp">
-            <LinearLayout
-                android:layout_width="329dp"
-                android:layout_height="355dp"/>
-            <FrameLayout
-                android:layout_width="46dp"
-                android:layout_height="46dp"
-                android:background="#FFFFFFFF">
-                <ImageView
-                    android:src="@drawable/arrow_left_circle"
-                    android:scaleType="fitXY"
-                    android:layout_width="12dp"
-                    android:layout_height="23dp"/>
-            </FrameLayout>
-            <FrameLayout
-                android:layout_width="46dp"
-                android:layout_height="46dp"
-                android:background="#FFFFFFFF">
-                <ImageView
-                    android:src="@drawable/arrow_left_circle"
-                    android:scaleType="fitXY"
-                    android:layout_width="12dp"
-                    android:layout_height="23dp"/>
-            </FrameLayout>
+            android:background="@drawable/rounded_border"
+            android:layout_margin="15dp"
+            android:paddingVertical="15dp"
+            android:paddingTop="15dp">
+
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
                 android:text="이렇게 입어보세요"
-                android:textSize="15sp"
                 android:textColor="#FF000000"
-                android:gravity="start"
+                android:textSize="15sp"
                 android:textStyle="bold"
-                android:layout_width="117dp"
-                android:layout_height="22dp"/>
-        </FrameLayout>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <FrameLayout
-            android:layout_width="325dp"
+            <ImageView
+                android:id="@+id/generated_codi_image_contents"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/chevron_left"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_vertical"
+                android:importantForAccessibility="no"
+                android:scaleType="fitXY"
+                android:src="@drawable/chevron_left"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/chevron_right"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="end|center_vertical"
+                android:importantForAccessibility="no"
+                android:scaleType="fitXY"
+                android:src="@drawable/chevron_right"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 입어보기 -->
+        <LinearLayout
+            android:id="@+id/button_try"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
             android:layout_height="39dp"
-            android:background="@drawable/bg_rounded"
-            android:paddingLeft="15dp"
-            android:paddingTop="0dp"
-            android:paddingRight="15dp"
-            android:paddingBottom="0dp">
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="77dp"
-                android:layout_height="23dp">
-                <FrameLayout
-                    android:layout_width="23dp"
-                    android:layout_height="23dp"
-                    android:background="#FFFFFFFF">
-                    <ImageView
-                        android:src="@drawable/"
-                        android:scaleType="fitXY"
-                        android:layout_width="19dp"
-                        android:layout_height="19dp"/>
-                </FrameLayout>
+            android:layout_marginHorizontal="15dp"
+            android:background="@drawable/bg_rounded_color"
+            android:gravity="center">
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+                <!--  INSTANCE: Instagram  -->
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:importantForAccessibility="no"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/instagram"
+                    android:layout_marginEnd="10dp"/>
+                <!--  TEXT: 입어보기  -->
                 <TextView
-                    android:layout_width="50dp"
-                    android:layout_height="19dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
                     android:gravity="start"
                     android:text="입어보기"
-                    android:textColor="#FF000000"
+                    android:textColor="#000000"
                     android:textSize="13sp" />
+
             </LinearLayout>
-        </FrameLayout>
+        </LinearLayout>
 
     </LinearLayout>
 </RelativeLayout>
