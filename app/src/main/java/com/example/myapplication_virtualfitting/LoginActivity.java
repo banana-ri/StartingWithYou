@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         btnGoogle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(LoginActivity.this, "구글 로그인 기능을 구현해야 합니다.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "구글 로그인 기능 구현 전.", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         btnNaver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(LoginActivity.this, "네이버 로그인 기능을 구현해야 합니다.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "네이버 로그인 기능 구현 전.", Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -41,7 +41,7 @@
     <string name="situation_caution_clothing_footer">다양한 지인이 모이는 자리이니 주의해야 해요.</string>
     <string name="situation_caution_color_title">이런 색상은 조심하세요!</string>
     <string name="situation_caution_color_desc">· 올블랙 착장\n· 넓은 면적의 화이트</string>
-    <string name="situation_caution_color_footer">화이트는 신부의 색으로 피하는 것이 좋아요.</string>
+    <string name="situation_caution_color_footer">화이트는 신부의 색으로, 피하는 것이 좋아요.</string>
     <string name="situation_suggest_title">이렇게 입어보세요</string>
 
     <string name="closet_title">나의 옷장</string>

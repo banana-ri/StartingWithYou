@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); // 메인 레이아웃 파일명
+        setContentView(R.layout.main_page); // 메인 페이지 레이아웃
 
         // 1. 상황 더하기 버튼 (SituationActivity로 이동)
         LinearLayout btnAddContext = findViewById(R.id.button_addcontext);
@@ -102,7 +102,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // 3. 설정/사용자 정보 수정 FAB (UserInfoActivity로 이동)
+        // 3. 입어보기 버튼 (TryActivity로 이동)
+        LinearLayout btnTry = findViewById(R.id.button_try);
+        btnTry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TryActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // 4. 설정/사용자 정보 수정 FAB (UserInfoActivity로 이동)
         FloatingActionButton fabSetting = findViewById(R.id.fab_setting_button);
         fabSetting.setOnClickListener(new View.OnClickListener() {
             @Override

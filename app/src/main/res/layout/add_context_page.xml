@@ -116,6 +116,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/caution_clothing_desc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="start"
@@ -124,6 +125,7 @@
                         android:textSize="13sp" />
 
                     <TextView
+                        android:id="@+id/caution_clothing_footer"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
@@ -150,6 +152,7 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/caution_color_desc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
@@ -158,6 +161,7 @@
                         android:textSize="13sp" />
 
                     <TextView
+                        android:id="@+id/caution_color_footer"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="start"
