@@ -1,42 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#FFFFFFFF">
-    <!--  Frame: My_Closet (360x780)  -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFFFF">
 
     <LinearLayout
-        android:paddingTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <!--  FRAME: Header  -->
         <RelativeLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp">
 
             <!--  Button: Arrow left-circle  -->
             <ImageButton
-                android:layout_marginStart="10dp"
-                android:id="@+id/arrow_left_circle"
-                android:layout_width="31dp"
-                android:layout_height="31dp"
-                android:background="#FFFFFFFF"
-                android:src="@drawable/arrow_left_circle" />
+            android:id="@+id/arrow_left_circle"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="4dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/common_back"
+            android:src="@drawable/arrow_left_circle" />
 
-            <!--  TEXT: 나의 옷장  -->
+            <!--  TEXT: 나의 옷장 텍스트스타일볼드 없어도 볼드처리 됐는지 확인!! -->
             <TextView
-                android:layout_centerInParent="true"
-                android:layout_gravity="center_horizontal"
-                android:text="나의 옷장"
-                android:textSize="19sp"
-                android:textColor="#000000"
-                android:gravity="center_horizontal"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/common_mycloset"
+                android:textColor="#000000"
+                android:textSize="19sp" />
         </RelativeLayout>
 
 
@@ -45,8 +43,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scrollbars="none"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp">
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="10dp">
 
             <com.google.android.material.chip.ChipGroup
                 android:id="@+id/chipGroup_category"
@@ -58,62 +56,62 @@
                 app:chipSpacingHorizontal="8dp">
 
                 <com.google.android.material.chip.Chip
-                    android:id="@+id/chip_all"
+                    android:id="@+id/chip_category_all"
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="전체"
+                    android:text="@string/closet_category_all"
                     android:checked="true"
                     app:chipBackgroundColor="@color/chip_bg_state"
                     android:textColor="@color/chip_text_state"
                     app:chipStrokeWidth="0dp"/>
 
                 <com.google.android.material.chip.Chip
-                    android:id="@+id/chip_top"
+                    android:id="@+id/chip_category_top"
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="상의"
+                    android:text="@string/closet_category_top"
                     app:chipBackgroundColor="@color/chip_bg_state"
                     android:textColor="@color/chip_text_state"
                     app:chipStrokeWidth="0dp"/>
 
                 <com.google.android.material.chip.Chip
-                    android:id="@+id/chip_bottoms"
+                    android:id="@+id/chip_category_bottoms"
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="하의"
+                    android:text="@string/closet_category_bottom"
                     app:chipBackgroundColor="@color/chip_bg_state"
                     android:textColor="@color/chip_text_state"
                     app:chipStrokeWidth="0dp"/>
 
                 <com.google.android.material.chip.Chip
-                    android:id="@+id/chip_acc"
+                    android:id="@+id/chip_category_acc"
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="악세사리"
+                    android:text="@string/closet_category_acc"
                     app:chipBackgroundColor="@color/chip_bg_state"
                     android:textColor="@color/chip_text_state"
                     app:chipStrokeWidth="0dp"/>
 
                 <com.google.android.material.chip.Chip
-                    android:id="@+id/chip_bag"
+                    android:id="@+id/chip_category_bag"
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가방"
+                    android:text="@string/closet_category_bag"
                     app:chipBackgroundColor="@color/chip_bg_state"
                     android:textColor="@color/chip_text_state"
                     app:chipStrokeWidth="0dp"/>
 
                 <com.google.android.material.chip.Chip
-                    android:id="@+id/chip_shoes"
+                    android:id="@+id/chip_category_shoes"
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="신발"
+                    android:text="@string/closet_category_shoes"
                     app:chipBackgroundColor="@color/chip_bg_state"
                     android:textColor="@color/chip_text_state"
                     app:chipStrokeWidth="0dp"/>
@@ -121,62 +119,67 @@
             </com.google.android.material.chip.ChipGroup>
         </HorizontalScrollView>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
         <!--  FRAME: Cards  -->
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:orientation="horizontal"
-            android:columnCount="3">
+            android:layout_margin="8dp"
+            android:columnCount="3"
+            android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/card_1"
-                android:src="@drawable/image"
-                android:scaleType="fitCenter"/>
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/image" />
+
             <ImageButton
                 android:id="@+id/card_2"
-                android:src="@drawable/image"
-                android:scaleType="fitCenter"/>
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/image" />
+
             <ImageButton
                 android:id="@+id/card_3"
-                android:src="@drawable/image"
-                android:scaleType="fitCenter"/>
-            <ImageButton
-                android:id="@+id/card_4"
-                android:src="@drawable/image"
-                android:scaleType="fitCenter"/>
-            <ImageButton
-                android:id="@+id/card_5"
-                android:src="@drawable/image"
-                android:scaleType="fitCenter"/>
-            <ImageButton
-                android:id="@+id/card_6"
-                android:src="@drawable/image"
-                android:scaleType="fitCenter"/>
-            <ImageButton
-                android:id="@+id/card_7"
-                android:src="@drawable/image"
-                android:scaleType="fitCenter"/>
-            <ImageButton
-                android:id="@+id/card_8"
-                android:src="@drawable/image"
-                android:scaleType="fitCenter"/>
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="4dp"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/image" />
 
         </GridLayout>
+    </ScrollView>
     </LinearLayout>
 
-    <!--  FRAME: Icon Button  -->
-    <ImageView
-        android:id="@+id/icon_button"
-        android:orientation="horizontal"
-        android:layout_width="46dp"
-        android:layout_height="46dp"
-        android:gravity="center"
-        android:src="@drawable/plus_button"
+    <!-- fab (추가 아이콘) -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_icon_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="17dp"
-        android:layout_marginBottom="15dp"
-        android:importantForAccessibility="no">
-    </ImageView>
+        android:layout_margin="16dp"
+        android:contentDescription="@string/closet_add_content_description"
+        android:src="@drawable/plus_button"
+        app:backgroundTint="#FFFFFF"
+        app:borderWidth="0dp"
+        app:fabSize="normal" />
+
 </RelativeLayout>

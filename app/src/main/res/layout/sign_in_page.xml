@@ -1,168 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:background="#FFFFFFFF">
-    <!--  Frame: Sign_In (360x780)  -->
-    <!--  FRAME: Field_email  -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFFFF"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <!-- 텍스트: 시작의 아이 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/pretendard_variable"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textColor="#FF000000"
+        android:textSize="23sp"
+        app:fontVariationSettings="'wght' 700" />
+
+    <!-- 텍스트: 어서오세요 / 가입하려면 이메일을 입력하세요 -->
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
         android:gravity="center"
         android:orientation="vertical">
 
         <TextView
-            android:text="시작의 아이"
-            android:textSize="23sp"
-            android:textColor="#FF000000"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_marginTop="20sp"
-            android:layout_marginBottom="20sp">
-            <TextView
-                android:text="어서오세요!"
-                android:textSize="15sp"
-                android:textColor="#000000"
-                android:gravity="center_horizontal"
-                android:textStyle="bold"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:text="가입하려면 이메일을 입력하세요"
-                android:textSize="13sp"
-                android:textColor="#000000"
-                android:gravity="center_horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="3sp" />
-        </LinearLayout>
-
-        <EditText
-            android:id="@+id/field_email"
-            android:layout_width="315dp"
-            android:layout_height="48dp"
-            android:background="@drawable/rounded_border"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
-            android:text="email@domain.com"
-            android:textColor="#FF828282"
-            android:layout_marginBottom="10dp"/>
-
-            <!--  FRAME: Button_continue  -->
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button_continue"
-            android:layout_width="314dp"
-            android:layout_height="38dp"
-            android:gravity="center"
-            android:background="@drawable/bg_rounded_button_continue"
-            android:text="계속"
-            android:textSize="13sp"
-            android:textColor="#FFFFFFFF"/>
-
-            <!-- -또는- -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginTop="20sp"
-            android:layout_marginBottom="20sp">
-            <View
-                android:layout_width="135dp"
-                android:layout_height="1dp"
-                android:background="#FFE6E6E6"/>
-            <TextView
-                android:text="또는"
-                android:textSize="13sp"
-                android:textColor="#FF828282"
-                android:gravity="center_horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"/>
-            <View
-                android:layout_width="135dp"
-                android:layout_height="1dp"
-                android:background="#FFE6E6E6"/>
-        </LinearLayout>
-
-            <!--  FRAME: Google_Button  -->
-        <LinearLayout
-            android:id="@+id/button_google"
-            android:orientation="horizontal"
-            android:layout_width="314dp"
-            android:layout_height="38dp"
-            android:background="@drawable/bg_rounded_color"
-            android:gravity="center"
-            android:layout_marginBottom="10dp">
-            <!--  FRAME: Label  -->
-            <LinearLayout
-                android:layout_gravity="center"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <!--  FRAME: Logo  -->
-                <ImageView
-                    android:src="@drawable/google_logo"
-                    android:scaleType="fitXY"
-                    android:layout_width="19dp"
-                    android:layout_height="19dp"/>
-                <!--  TEXT: Google 계정으로 계속하기  -->
-                <TextView
-                    android:text="Google 계정으로 계속하기"
-                    android:textSize="13sp"
-                    android:textColor="#FF000000"
-                    android:gravity="start"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-        </LinearLayout>
-
-            <!--  FRAME: NAVER_Button  -->
-        <LinearLayout
-            android:id="@+id/naver_button"
-            android:orientation="horizontal"
-            android:layout_width="314dp"
-            android:layout_height="38dp"
-            android:background="@drawable/bg_rounded_color"
-            android:gravity="center">
-            <!--  FRAME: Label  -->
-            <LinearLayout
-                android:layout_gravity="center"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <!--  RECTANGLE: Logo  -->
-                <ImageView
-                    android:src="@drawable/naver_logo"
-                    android:layout_width="19dp"
-                    android:layout_height="19dp"/>
-                <!--  TEXT: NAVER 계정으로 계속하기  -->
-                <TextView
-                    android:text="NAVER 계정으로 계속하기"
-                    android:textSize="13sp"
-                    android:textColor="#FF000000"
-                    android:gravity="start"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-            </LinearLayout>
-        </LinearLayout>
-
+            android:fontFamily="@font/pretendard_variable"
+            app:fontVariationSettings="'wght' 400"
+            android:gravity="center_horizontal"
+            android:text="@string/login_welcome"
+            android:textColor="#000000"
+            android:textSize="15sp" />
 
         <TextView
-            android:layout_marginTop="20sp"
-            android:layout_width="300dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_variable"
+            app:fontVariationSettings="'wght' 400"
+            android:layout_marginTop="3dp"
             android:gravity="center_horizontal"
-            android:text="계속을 클릭하면 당사의 서비스 이용 약관 및 개인정보 처리방침에 동의하는 것으로 간주됩니다."
-            android:textSize="11sp" />
-        <!--  TEXT: NAME  -->
+            android:text="@string/login_guide"
+            android:textColor="#000000"
+            android:textSize="13sp" />
     </LinearLayout>
-</RelativeLayout>
+
+    <!-- 이메일 입력 박스 -->
+    <EditText
+        android:id="@+id/field_email"
+        android:layout_width="315dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/rounded_border"
+        android:gravity="center_vertical"
+        android:hint="@string/login_email_hint"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:textColor="#FF828282"
+        android:textSize="14sp" />
+
+    <!--  FRAME: Button_continue  -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_continue"
+        android:layout_width="314dp"
+        android:layout_height="38dp"
+        android:background="@drawable/bg_rounded_button_continue"
+        android:fontFamily="@font/pretendard_variable"
+        android:gravity="center"
+        android:text="@string/common_continue"
+        android:textColor="#FFFFFFFF"
+        android:textSize="13sp"
+        app:fontVariationSettings="'wght' 700" />
+
+    <!-- -또는- -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20sp"
+        android:layout_marginBottom="20sp">
+        <View
+            android:layout_width="135dp"
+            android:layout_height="1dp"
+            android:background="#FFE6E6E6"/>
+        <TextView
+            android:text="@string/common_or"
+            android:textSize="13sp"
+            android:textColor="#FF828282"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:fontFamily="@font/pretendard_variable"/>
+        <View
+            android:layout_width="135dp"
+            android:layout_height="1dp"
+            android:background="#FFE6E6E6"/>
+    </LinearLayout>
+
+            <!--  FRAME: Google_Button  -->
+    <LinearLayout
+        android:id="@+id/button_google"
+        android:layout_width="314dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/bg_rounded_color"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/google_logo"
+            android:importantForAccessibility="no" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_variable"
+            android:text="@string/login_google"
+            android:textColor="#FF000000"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!--  FRAME: NAVER_Button  -->
+    <LinearLayout
+        android:id="@+id/naver_button"
+        android:layout_width="314dp"
+        android:layout_height="38dp"
+        android:background="@drawable/bg_rounded_color"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="19dp"
+            android:layout_height="19dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/naver_logo"
+            android:importantForAccessibility="no" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_variable"
+            android:text="@string/login_naver"
+            android:textColor="#FF000000"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/login_terms_agreement"
+        android:textColor="#767676"
+        android:textSize="11sp"
+        android:fontFamily="@font/pretendard_variable" />
+    </LinearLayout>

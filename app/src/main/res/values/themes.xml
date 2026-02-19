@@ -1,13 +1,24 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+
     <style name="Base.Theme.MyApplication_VirtualFitting" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:fontFamily">@font/pretendard_variable</item>
+        <item name="fontFamily">@font/pretendard_variable</item>
+
+        <item name="android:textViewStyle">@style/Widget.MyApp.TextView</item>
     </style>
 
-    <style name="Theme.MyApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        ...
+    <style name="Widget.MyApp.TextView" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/pretendard_variable</item>
+        <item name="fontFamily">@font/pretendard_variable</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:fontVariationSettings">'wght' 400</item>
+    </style>
+
+    <style name="PretendardBold" parent="Widget.MyApp.TextView">
+        <item name="android:fontVariationSettings">'wght' 700</item>
+        <item name="android:fontFamily">@font/pretendard_variable</item>
     </style>
 
     <style name="Theme.MyApplication_VirtualFitting" parent="Base.Theme.MyApplication_VirtualFitting" />
+
 </resources>
