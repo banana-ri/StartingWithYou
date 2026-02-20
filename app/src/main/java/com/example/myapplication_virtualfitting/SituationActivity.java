@@ -65,7 +65,7 @@ public class SituationActivity extends AppCompatActivity {
             } else if (checkedId == R.id.chip_contents_funeral) {
                 updateUI("· 화려한 장식이나 노출이 있는 의상\n· 샌들, 슬리퍼 등의 신발",
                         "단정한 옷을 기본으로, 양말은 반드시 착용해야 해요.",
-                        "· 밝고 화사한 색상\n· 어쩌구",
+                        "· 밝고 화사한 색상\n· 화려한 무늬",
                         "· 장례식장에서는 검은색 정장을 입는 게 일반적이에요.",
                         R.drawable.img_funeral_codi);
 
