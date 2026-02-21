@@ -1,124 +1,36 @@
 package com.example.myapplication_virtualfitting;
 
 import android.os.Bundle;
-import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
-import android.view.View;
 import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
-import android.view.Menu;
-import android.view.MenuItem;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.LinearLayout;
-import androidx.appcompat.app.AppCompatActivity;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    /*
-    private AppBarConfiguration appBarConfiguration;
-    private ActivityMainBinding binding;
+    private NavController navController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        // 1. NavHostFragment 찾기
+        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.nav_host_fragment);
 
-        setSupportActionBar(binding.toolbar);
+        // 2. NavController 가져오기 (화면 전환 제어자)
+        if (navHostFragment != null) {
+            navController = navHostFragment.getNavController();
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-
-        binding.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAnchorView(R.id.fab)
-                        .setAction("Action", null).show();
-            }
-        });
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+            // (옵션) 액션바가 있다면 내비게이션과 연결해 제목을 자동으로 바꿔줍니다.
+            // NavigationUI.setupActionBarWithNavController(this, navController);
         }
-
-        return super.onOptionsItemSelected(item);
     }
 
+    // 뒤로 가기 버튼 지원 (액션바의 뒤로 가기 버튼 클릭 시)
     @Override
     public boolean onSupportNavigateUp() {
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        return NavigationUI.navigateUp(navController, appBarConfiguration)
-                || super.onSupportNavigateUp();
-    }
-     */
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_page); // 메인 페이지 레이아웃
-
-        // 1. 상황 더하기 버튼 (SituationActivity로 이동)
-        LinearLayout btnAddContext = findViewById(R.id.button_addcontext);
-        btnAddContext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SituationActivity.class);
-                startActivity(intent);
-            }
-        });
-        // 2. 나의 옷장 버튼 (ClosetActivity로 이동)
-        LinearLayout btnMyCloset = findViewById(R.id.button_mycloset);
-        btnMyCloset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ClosetActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        // 3. 입어보기 버튼 (TryActivity로 이동)
-        LinearLayout btnTry = findViewById(R.id.button_try);
-        btnTry.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, TryActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        // 4. 설정/사용자 정보 수정 FAB (UserInfoActivity로 이동)
-        FloatingActionButton fabSetting = findViewById(R.id.fab_setting_button);
-        fabSetting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, UserInfoActivity.class);
-                startActivity(intent);
-            }
-        });
+        return navController.navigateUp() || super.onSupportNavigateUp();
     }
 }

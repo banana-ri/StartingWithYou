@@ -47,7 +47,7 @@
                 android:layout_width="44dp"
                 android:layout_height="44dp"
                 android:importantForAccessibility="no"
-                android:src="@drawable/baseline_wb_sunny_24" />
+                android:src="@drawable/weather_sunny" />
 
             <!--  FRAME: 날씨 상세 정보  -->
             <LinearLayout

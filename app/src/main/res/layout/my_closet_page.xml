@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="#FFFFFFFF">
 
     <LinearLayout
@@ -119,53 +120,15 @@
             </com.google.android.material.chip.ChipGroup>
         </HorizontalScrollView>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp">
-        <!--  FRAME: Cards  -->
-        <GridLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_closet"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:columnCount="3"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/card_1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_margin="4dp"
-                android:adjustViewBounds="true"
-                android:background="@android:color/transparent"
-                android:scaleType="fitCenter"
-                android:src="@drawable/image" />
-
-            <ImageButton
-                android:id="@+id/card_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_margin="4dp"
-                android:adjustViewBounds="true"
-                android:background="@android:color/transparent"
-                android:scaleType="fitCenter"
-                android:src="@drawable/image" />
-
-            <ImageButton
-                android:id="@+id/card_3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_margin="4dp"
-                android:adjustViewBounds="true"
-                android:background="@android:color/transparent"
-                android:scaleType="fitCenter"
-                android:src="@drawable/image" />
-
-        </GridLayout>
-    </ScrollView>
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="8dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="3"
+            tools:listitem="@layout/item_cloth_card"/>
     </LinearLayout>
 
     <!-- fab (추가 아이콘) -->
@@ -177,7 +140,7 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="16dp"
         android:contentDescription="@string/closet_add_content_description"
-        android:src="@drawable/plus_button"
+        android:src="@drawable/plus"
         app:backgroundTint="#FFFFFF"
         app:borderWidth="0dp"
         app:fabSize="normal" />

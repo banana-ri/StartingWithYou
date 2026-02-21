@@ -159,7 +159,7 @@
                 android:textSize="13sp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button_men"
+                android:id="@+id/button_man"
                 android:layout_width="0dp"
                 android:layout_height="38dp"
                 android:layout_marginStart="14dp"

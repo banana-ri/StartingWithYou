@@ -2,4 +2,70 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"/>
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/userInfoFragment"
+        android:name="com.example.myapplication_virtualfitting.UserInfoFragment"
+        android:label="UserInfoFragment" >
+        <action
+            android:id="@+id/action_userInfoFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/closetFragment"
+        android:name="com.example.myapplication_virtualfitting.ClosetFragment"
+        android:label="ClosetFragment" >
+        <action
+            android:id="@+id/action_closetFragment_to_closetDetailFragment"
+            app:destination="@id/closetDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.myapplication_virtualfitting.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_userInfoFragment"
+            app:destination="@id/userInfoFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.myapplication_virtualfitting.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_closetFragment"
+            app:destination="@id/closetFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_situationFragment"
+            app:destination="@id/situationFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_tryFragment"
+            app:destination="@id/tryFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_userInfoFragment"
+            app:destination="@id/userInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/situationFragment"
+        android:name="com.example.myapplication_virtualfitting.SituationFragment"
+        android:label="SituationFragment" >
+        <action
+            android:id="@+id/action_situationFragment_to_tryFragment"
+            app:destination="@id/tryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tryFragment"
+        android:name="com.example.myapplication_virtualfitting.TryFragment"
+        android:label="TryFragment" />
+    <fragment
+        android:id="@+id/closetDetailFragment"
+        android:name="com.example.myapplication_virtualfitting.ClosetDetailFragment"
+        android:label="ClosetDetailFragment" >
+        <action
+            android:id="@+id/action_closetDetailFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+</navigation>
