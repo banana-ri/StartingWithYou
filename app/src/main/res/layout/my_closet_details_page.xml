@@ -20,11 +20,11 @@
             <!--  Button: Arrow left-circle  -->
             <ImageButton
                 android:id="@+id/arrow_left_circle"
-                android:layout_width="31dp"
-                android:layout_height="31dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="10dp"
                 android:background="#FFFFFFFF"
-                android:contentDescription="뒤로가기"
+                android:contentDescription="@string/common_back"
                 android:src="@drawable/arrow_left_circle" />
 
             <!--  TEXT: 나의 옷장  -->
@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:layout_gravity="center_horizontal"
-                android:text="나의 옷장"
+                android:text="@string/closet_title"
                 android:textSize="19sp"
                 android:textColor="#000000"
                 android:gravity="center_horizontal"
@@ -45,7 +45,7 @@
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="상세 정보 확인 / 편집"
+            android:text="@string/closet_detail"
             android:fontFamily="@font/pretendard_variable"
             app:fontVariationSettings="'wght' 700"
             android:layout_marginBottom="25dp"/>
@@ -57,7 +57,8 @@
             android:layout_height="310dp"
             android:src="@drawable/image"
             android:scaleType="fitCenter"
-            android:layout_marginBottom="25dp"/>
+            android:layout_marginBottom="25dp"
+            android:contentDescription="@string/closet_title"/>
 
 
         <LinearLayout
@@ -69,7 +70,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="계절"
+                android:text="@string/season"
                 android:textStyle="bold"
                 android:layout_gravity="center"/>
             <!-- 계절 -->
@@ -95,7 +96,7 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="봄"
+                        android:text="@string/season_spring"
                         android:checked="true"
                         app:chipBackgroundColor="@color/chip_bg_state"
                         android:textColor="@color/chip_text_state"
@@ -106,7 +107,7 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="여름"
+                        android:text="@string/season_summer"
                         app:chipBackgroundColor="@color/chip_bg_state"
                         android:textColor="@color/chip_text_state"
                         app:chipStrokeWidth="0dp"/>
@@ -116,7 +117,7 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="가을"
+                        android:text="@string/season_autumn"
                         android:checked="true"
                         app:chipBackgroundColor="@color/chip_bg_state"
                         android:textColor="@color/chip_text_state"
@@ -127,7 +128,7 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="겨울"
+                        android:text="@string/season_winter"
                         app:chipBackgroundColor="@color/chip_bg_state"
                         android:textColor="@color/chip_text_state"
                         app:chipStrokeWidth="0dp"/>
@@ -137,7 +138,7 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="사계절"
+                        android:text="@string/season_four"
                         app:chipBackgroundColor="@color/chip_bg_state"
                         android:textColor="@color/chip_text_state"
                         app:chipStrokeWidth="0dp"/>
@@ -155,7 +156,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="부분"
+                android:text="@string/part"
                 android:textStyle="bold"
                 android:layout_gravity="center"/>
         <!-- 부분 -->
@@ -180,7 +181,7 @@
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="상의"
+                    android:text="@string/closet_category_top"
                     android:checked="true"
                     app:chipBackgroundColor="@color/chip_bg_state"
                     android:textColor="@color/chip_text_state"
@@ -191,7 +192,7 @@
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="하의"
+                    android:text="@string/closet_category_bottom"
                     app:chipBackgroundColor="@color/chip_bg_state"
                     android:textColor="@color/chip_text_state"
                     app:chipStrokeWidth="0dp"/>
@@ -201,7 +202,7 @@
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="악세사리"
+                    android:text="@string/closet_category_acc"
                     app:chipBackgroundColor="@color/chip_bg_state"
                     android:textColor="@color/chip_text_state"
                     app:chipStrokeWidth="0dp"/>
@@ -211,7 +212,7 @@
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="가방"
+                    android:text="@string/closet_category_bag"
                     app:chipBackgroundColor="@color/chip_bg_state"
                     android:textColor="@color/chip_text_state"
                     app:chipStrokeWidth="0dp"/>
@@ -221,7 +222,7 @@
                     style="@style/Widget.MaterialComponents.Chip.Choice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="신발"
+                    android:text="@string/closet_category_shoes"
                     app:chipBackgroundColor="@color/chip_bg_state"
                     android:textColor="@color/chip_text_state"
                     app:chipStrokeWidth="0dp"/>
@@ -238,7 +239,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="두께"
+                android:text="@string/thickness"
                 android:textStyle="bold"
                 android:layout_gravity="center"/>
             <!-- 두께 -->
@@ -263,7 +264,7 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="얇음"
+                        android:text="@string/thickness_thin"
                         android:checked="true"
                         app:chipBackgroundColor="@color/chip_bg_state"
                         android:textColor="@color/chip_text_state"
@@ -274,7 +275,7 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="약간 얇음"
+                        android:text="@string/thickness_littleThin"
                         app:chipBackgroundColor="@color/chip_bg_state"
                         android:textColor="@color/chip_text_state"
                         app:chipStrokeWidth="0dp"/>
@@ -284,7 +285,7 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="보통"
+                        android:text="@string/thickness_common"
                         app:chipBackgroundColor="@color/chip_bg_state"
                         android:textColor="@color/chip_text_state"
                         app:chipStrokeWidth="0dp"/>
@@ -294,7 +295,7 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="약간 두꺼움"
+                        android:text="@string/thickness_littleThick"
                         app:chipBackgroundColor="@color/chip_bg_state"
                         android:textColor="@color/chip_text_state"
                         app:chipStrokeWidth="0dp"/>
@@ -304,7 +305,7 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="두꺼움"
+                        android:text="@string/thickness_thick"
                         app:chipBackgroundColor="@color/chip_bg_state"
                         android:textColor="@color/chip_text_state"
                         app:chipStrokeWidth="0dp"/>
@@ -321,7 +322,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="기장"
+                android:text="@string/length"
                 android:textStyle="bold"
                 android:layout_gravity="center" />
             <!--기장-->
@@ -346,7 +347,7 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="긺"
+                        android:text="@string/length_long"
                         android:checked="true"
                         app:chipBackgroundColor="@color/chip_bg_state"
                         android:textColor="@color/chip_text_state"
@@ -357,7 +358,7 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="약간 긺"
+                        android:text="@string/length_littleLong"
                         app:chipBackgroundColor="@color/chip_bg_state"
                         android:textColor="@color/chip_text_state"
                         app:chipStrokeWidth="0dp"/>
@@ -367,7 +368,7 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="보통"
+                        android:text="@string/length_common"
                         app:chipBackgroundColor="@color/chip_bg_state"
                         android:textColor="@color/chip_text_state"
                         app:chipStrokeWidth="0dp"/>
@@ -377,7 +378,7 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="약간 짧음"
+                        android:text="@string/length_littleShort"
                         app:chipBackgroundColor="@color/chip_bg_state"
                         android:textColor="@color/chip_text_state"
                         app:chipStrokeWidth="0dp"/>
@@ -387,7 +388,7 @@
                         style="@style/Widget.MaterialComponents.Chip.Choice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="짧음"
+                        android:text="@string/length_short"
                         app:chipBackgroundColor="@color/chip_bg_state"
                         android:textColor="@color/chip_text_state"
                         app:chipStrokeWidth="0dp"/>
@@ -407,7 +408,7 @@
                 android:id="@+id/button_recommend"
                 android:orientation="horizontal"
                 android:layout_width="150dp"
-                android:layout_height="38dp"
+                android:layout_height="48dp"
                 android:background="@drawable/bg_rounded_color"
                 android:clickable="true"
                 android:focusable="true"
@@ -416,9 +417,10 @@
                         android:src="@drawable/crosshair"
                         android:scaleType="fitXY"
                         android:layout_width="23dp"
-                        android:layout_height="23dp" />
+                        android:layout_height="23dp"
+                        android:importantForAccessibility="no"/>
                     <TextView
-                        android:text="추천받기"
+                        android:text="@string/common_recommend"
                         android:textSize="13sp"
                         android:textColor="#000000"
                         android:gravity="start"
@@ -432,7 +434,7 @@
                 android:id="@+id/button_save"
                 android:orientation="horizontal"
                 android:layout_width="150dp"
-                android:layout_height="38dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="14dp"
                 android:background="@drawable/bg_rounded_color"
                 android:clickable="true"
@@ -443,9 +445,10 @@
                         android:src="@drawable/file"
                         android:scaleType="fitXY"
                         android:layout_width="23dp"
-                        android:layout_height="23dp" />
+                        android:layout_height="23dp"
+                        android:importantForAccessibility="no"/>
                     <TextView
-                        android:text="저장하기"
+                        android:text="@string/common_save"
                         android:textSize="13sp"
                         android:textColor="#000000"
                         android:gravity="start"

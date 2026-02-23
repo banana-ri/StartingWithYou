@@ -7,7 +7,8 @@
     <fragment
         android:id="@+id/userInfoFragment"
         android:name="com.example.myapplication_virtualfitting.UserInfoFragment"
-        android:label="UserInfoFragment" >
+        android:label="UserInfoFragment"
+        tools:layout="@layout/user_info_page">
         <action
             android:id="@+id/action_userInfoFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
@@ -15,7 +16,8 @@
     <fragment
         android:id="@+id/closetFragment"
         android:name="com.example.myapplication_virtualfitting.ClosetFragment"
-        android:label="ClosetFragment" >
+        android:label="ClosetFragment"
+        tools:layout="@layout/my_closet_page">
         <action
             android:id="@+id/action_closetFragment_to_closetDetailFragment"
             app:destination="@id/closetDetailFragment" />
@@ -23,7 +25,8 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.myapplication_virtualfitting.LoginFragment"
-        android:label="LoginFragment" >
+        android:label="LoginFragment"
+        tools:layout="@layout/sign_in_page">
         <action
             android:id="@+id/action_loginFragment_to_userInfoFragment"
             app:destination="@id/userInfoFragment" />
@@ -34,7 +37,8 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.myapplication_virtualfitting.MainFragment"
-        android:label="MainFragment" >
+        android:label="MainFragment"
+        tools:layout="@layout/main_page">
         <action
             android:id="@+id/action_mainFragment_to_closetFragment"
             app:destination="@id/closetFragment" />
@@ -51,7 +55,8 @@
     <fragment
         android:id="@+id/situationFragment"
         android:name="com.example.myapplication_virtualfitting.SituationFragment"
-        android:label="SituationFragment" >
+        android:label="SituationFragment"
+        tools:layout="@layout/add_context_page">
         <action
             android:id="@+id/action_situationFragment_to_tryFragment"
             app:destination="@id/tryFragment" />
@@ -59,11 +64,13 @@
     <fragment
         android:id="@+id/tryFragment"
         android:name="com.example.myapplication_virtualfitting.TryFragment"
-        android:label="TryFragment" />
+        android:label="TryFragment"
+        tools:layout="@layout/try_page"/>
     <fragment
         android:id="@+id/closetDetailFragment"
         android:name="com.example.myapplication_virtualfitting.ClosetDetailFragment"
-        android:label="ClosetDetailFragment" >
+        android:label="ClosetDetailFragment"
+        tools:layout="@layout/my_closet_details_page">
         <action
             android:id="@+id/action_closetDetailFragment_to_mainFragment"
             app:destination="@id/mainFragment" />

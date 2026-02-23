@@ -15,9 +15,9 @@
     <string name="login_naver">NAVER 계정으로 계속하기</string>
     <string name="login_terms_agreement">계속을 클릭하면 당사의 서비스 이용 약관 및 개인정보 처리방침에 동의하는 것으로 간주됩니다.</string>
 
-    <string name="main_temperature">19°C / 11°C</string>
+    <string name="main_temperature">19도 / 11도</string>
     <string name="main_weather">하루 종일 맑은 하루예요.</string>
-    <string name="main_rain_wind">강수 확률 10% | 바람 2m/s</string>
+    <string name="main_rain_wind">"강수 확률 10% | 바람 2m/s"</string>
     <string name="main_today_title">오늘의 코디 추천</string>
     <string name="main_setting_button">설정</string>
 
@@ -37,10 +37,10 @@
     <string name="situation_chip_funeral">장례식장 조문</string>
     <string name="situation_chip_interview">면접</string>
     <string name="situation_caution_clothing_title">이런 의상은 조심하세요!</string>
-    <string name="situation_caution_clothing_desc">· 슬리퍼, 트레이닝복 등의 편한 의상\n· 짧거나 노출이 있는 의상</string>
+    <string name="situation_caution_clothing_desc">"· 슬리퍼, 트레이닝복 등의 편한 의상\n· 짧거나 노출이 있는 의상"</string>
     <string name="situation_caution_clothing_footer">다양한 지인이 모이는 자리이니 주의해야 해요.</string>
     <string name="situation_caution_color_title">이런 색상은 조심하세요!</string>
-    <string name="situation_caution_color_desc">· 올블랙 착장\n· 넓은 면적의 화이트</string>
+    <string name="situation_caution_color_desc">"· 올블랙 착장\n· 넓은 면적의 화이트"</string>
     <string name="situation_caution_color_footer">화이트는 신부의 색으로, 피하는 것이 좋아요.</string>
     <string name="situation_suggest_title">이렇게 입어보세요</string>
 
@@ -55,4 +55,26 @@
 
     <string name="cm">cm</string>
     <string name="kg">kg</string>
+    <string name="closet_detail">상세 정보 확인 / 편집</string>
+    <string name="season">계절</string>
+    <string name="season_spring">봄</string>
+    <string name="season_summer">여름</string>
+    <string name="season_autumn">가을</string>
+    <string name="season_winter">겨울</string>
+    <string name="season_four">사계절</string>
+    <string name="part">부분</string>
+    <string name="thickness">두께</string>
+    <string name="thickness_thin">얇음</string>
+    <string name="thickness_littleThin">약간 얇음</string>
+    <string name="thickness_common">보통</string>
+    <string name="thickness_littleThick">약간 두꺼움</string>
+    <string name="thickness_thick">두꺼움</string>
+    <string name="length">기장</string>
+    <string name="length_long">긺</string>
+    <string name="length_littleLong">약간 긺</string>
+    <string name="length_common">보통</string>
+    <string name="length_littleShort">약간 짧음</string>
+    <string name="length_short">짧음</string>
+    <string name="common_recommend">추천받기</string>
+    <string name="common_save">저장하기</string>
 </resources>

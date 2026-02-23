@@ -36,6 +36,11 @@ android {
     }
 }
 
+configurations.all {
+    exclude(group = "com.android.support", module = "support-compat")
+    exclude(group = "com.android.support", module = "support-v4")
+}
+
 dependencies {
     implementation(libs.appcompat)
     implementation(libs.material)
@@ -43,7 +48,6 @@ dependencies {
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
     implementation("com.google.android.material:material:1.11.0")
-    implementation("com.android.support:design:26.1.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

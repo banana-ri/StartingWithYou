@@ -8,7 +8,6 @@
     android:orientation="vertical"
     android:padding="20dp">
 
-    <!-- 스타일로 폰트 굵기를 설정했는데 왜 볼드스타일 + 텍스트스타일 볼드를 써야만 적용되는거지? -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -21,7 +20,7 @@
         <EditText
             android:id="@+id/field_name"
             android:layout_width="314dp"
-            android:layout_height="38dp"
+            android:layout_height="48dp"
             android:background="@drawable/rounded_border_field"
             android:paddingHorizontal="15dp"
             android:hint="@string/user_info_name_hint"
@@ -40,14 +39,15 @@
             <EditText
                 android:id="@+id/field_age"
                 android:layout_width="0dp"
-                android:layout_height="38dp"
+                android:layout_height="48dp"
                 android:layout_weight="1"
                 android:background="@drawable/rounded_border_field"
                 android:hint="@string/user_info_age_hint"
                 android:textSize="13sp"
                 android:textColor="#FF828282"
                 android:inputType="number"
-                android:paddingHorizontal="10dp" />
+                android:paddingHorizontal="10dp"
+                android:autofillHints="age"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -60,7 +60,7 @@
             <Spinner
                 android:id="@+id/select_job"
                 android:layout_width="0dp"
-                android:layout_height="38dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="10dp"
                 android:layout_weight="1.2" />
         </LinearLayout>
@@ -75,7 +75,7 @@
             <EditText
                 android:id="@+id/field_height"
                 android:layout_width="250dp"
-                android:layout_height="38dp"
+                android:layout_height="48dp"
                 android:background="@drawable/rounded_border_field"
                 android:hint="@string/user_info_height_hint"
                 android:textSize="13sp"
@@ -102,7 +102,7 @@
             <EditText
                 android:id="@+id/field_weight"
                 android:layout_width="250dp"
-                android:layout_height="38dp"
+                android:layout_height="48dp"
                 android:background="@drawable/rounded_border_field"
                 android:paddingHorizontal="10dp"
                 android:hint="@string/user_info_weight_hint"
@@ -151,7 +151,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button_woman"
                 android:layout_width="0dp"
-                android:layout_height="38dp"
+                android:layout_height="48dp"
                 android:layout_weight="1"
                 android:background="@drawable/bg_rounded_color"
                 android:text="@string/user_info_gender_female"
@@ -161,7 +161,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button_man"
                 android:layout_width="0dp"
-                android:layout_height="38dp"
+                android:layout_height="48dp"
                 android:layout_marginStart="14dp"
                 android:layout_weight="1"
                 android:background="@drawable/bg_rounded_color"
@@ -173,7 +173,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_other"
         android:layout_width="314dp"
-        android:layout_height="38dp"
+        android:layout_height="48dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/bg_rounded_color"
         android:text="@string/user_info_gender_other"
@@ -183,7 +183,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_continue"
         android:layout_width="314dp"
-        android:layout_height="38dp"
+        android:layout_height="48dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/bg_rounded_button_continue"
         android:text="@string/common_continue"
