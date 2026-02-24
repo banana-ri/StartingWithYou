@@ -61,7 +61,8 @@
                     android:text="@string/situation_chip_wedding"
                     android:textColor="@color/chip_text_state"
                     app:chipBackgroundColor="@color/chip_bg_state"
-                    app:chipStrokeWidth="0dp" />
+                    app:chipStrokeWidth="0dp"
+                    android:textSize="15sp"/>
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_contents_funeral"
