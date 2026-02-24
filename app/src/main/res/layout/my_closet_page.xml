@@ -35,7 +35,7 @@
                 android:layout_centerInParent="true"
                 android:text="@string/common_mycloset"
                 android:textColor="#000000"
-                android:textSize="19sp" />
+                android:textSize="24sp" />
         </RelativeLayout>
 
 
@@ -65,7 +65,8 @@
                     android:checked="true"
                     app:chipBackgroundColor="@color/chip_bg_state"
                     android:textColor="@color/chip_text_state"
-                    app:chipStrokeWidth="0dp"/>
+                    app:chipStrokeWidth="0dp"
+                    android:textSize="15sp"/>
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_category_top"
@@ -75,7 +76,8 @@
                     android:text="@string/closet_category_top"
                     app:chipBackgroundColor="@color/chip_bg_state"
                     android:textColor="@color/chip_text_state"
-                    app:chipStrokeWidth="0dp"/>
+                    app:chipStrokeWidth="0dp"
+                    android:textSize="15sp"/>
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_category_bottoms"
@@ -85,7 +87,8 @@
                     android:text="@string/closet_category_bottom"
                     app:chipBackgroundColor="@color/chip_bg_state"
                     android:textColor="@color/chip_text_state"
-                    app:chipStrokeWidth="0dp"/>
+                    app:chipStrokeWidth="0dp"
+                    android:textSize="15sp"/>
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_category_acc"
@@ -95,7 +98,8 @@
                     android:text="@string/closet_category_acc"
                     app:chipBackgroundColor="@color/chip_bg_state"
                     android:textColor="@color/chip_text_state"
-                    app:chipStrokeWidth="0dp"/>
+                    app:chipStrokeWidth="0dp"
+                    android:textSize="15sp"/>
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_category_bag"
@@ -105,7 +109,8 @@
                     android:text="@string/closet_category_bag"
                     app:chipBackgroundColor="@color/chip_bg_state"
                     android:textColor="@color/chip_text_state"
-                    app:chipStrokeWidth="0dp"/>
+                    app:chipStrokeWidth="0dp"
+                    android:textSize="15sp"/>
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chip_category_shoes"
@@ -115,7 +120,8 @@
                     android:text="@string/closet_category_shoes"
                     app:chipBackgroundColor="@color/chip_bg_state"
                     android:textColor="@color/chip_text_state"
-                    app:chipStrokeWidth="0dp"/>
+                    app:chipStrokeWidth="0dp"
+                    android:textSize="15sp"/>
 
             </com.google.android.material.chip.ChipGroup>
         </HorizontalScrollView>
@@ -138,7 +144,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_margin="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="100dp"
         android:contentDescription="@string/closet_add_content_description"
         android:src="@drawable/plus"
         app:backgroundTint="#FFFFFF"

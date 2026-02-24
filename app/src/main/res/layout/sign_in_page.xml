@@ -16,8 +16,8 @@
         android:gravity="center"
         android:text="@string/app_name"
         android:textColor="#FF000000"
-        android:textSize="23sp"
-        app:fontVariationSettings="'wght' 700" />
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <!-- 텍스트: 어서오세요 / 가입하려면 이메일을 입력하세요 -->
     <LinearLayout
@@ -36,7 +36,7 @@
             android:gravity="center_horizontal"
             android:text="@string/login_welcome"
             android:textColor="#000000"
-            android:textSize="15sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -47,7 +47,7 @@
             android:gravity="center_horizontal"
             android:text="@string/login_guide"
             android:textColor="#000000"
-            android:textSize="13sp" />
+            android:textSize="15sp" />
     </LinearLayout>
 
     <!-- 이메일 입력 박스 -->
@@ -63,7 +63,7 @@
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:textColor="#FF828282"
-        android:textSize="14sp"
+        android:textSize="15sp"
         android:autofillHints="emailAddress"/>
 
     <!--  FRAME: Button_continue  -->
@@ -76,8 +76,8 @@
         android:gravity="center"
         android:text="@string/common_continue"
         android:textColor="#FFFFFFFF"
-        android:textSize="13sp"
-        app:fontVariationSettings="'wght' 700" />
+        android:textSize="15sp"
+        android:textStyle="bold"/>
 
     <!-- -또는- -->
     <LinearLayout
@@ -131,7 +131,7 @@
             android:fontFamily="@font/pretendard_variable"
             android:text="@string/login_google"
             android:textColor="#FF000000"
-            android:textSize="13sp" />
+            android:textSize="15sp" />
     </LinearLayout>
 
     <!--  FRAME: NAVER_Button  -->
@@ -158,7 +158,7 @@
             android:fontFamily="@font/pretendard_variable"
             android:text="@string/login_naver"
             android:textColor="#FF000000"
-            android:textSize="13sp" />
+            android:textSize="15sp" />
     </LinearLayout>
 
 
@@ -169,6 +169,6 @@
         android:gravity="center_horizontal"
         android:text="@string/login_terms_agreement"
         android:textColor="#767676"
-        android:textSize="11sp"
+        android:textSize="13sp"
         android:fontFamily="@font/pretendard_variable" />
     </LinearLayout>

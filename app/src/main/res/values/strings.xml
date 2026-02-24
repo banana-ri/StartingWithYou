@@ -77,4 +77,5 @@
     <string name="length_short">짧음</string>
     <string name="common_recommend">추천받기</string>
     <string name="common_save">저장하기</string>
+    <string name="delete_button">삭제하기</string>
 </resources>
