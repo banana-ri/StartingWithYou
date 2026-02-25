@@ -1,14 +1,12 @@
 plugins {
-    alias(libs.plugins.android.application)
-    id("org.jetbrains.kotlin.android") version "1.9.0"
-    id("org.jetbrains.kotlin.kapt") version "1.9.0"
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+    id("com.google.devtools.ksp")
 }
 
 android {
     namespace = "com.example.myapplication_virtualfitting"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.myapplication_virtualfitting"
@@ -30,9 +28,14 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
+
+    kotlinOptions{
+        jvmTarget = "17"
+    }
+
     buildFeatures {
         viewBinding = true
     }
@@ -59,6 +62,6 @@ dependencies {
     // toml에 정의된 라이브러리 사용
     implementation("androidx.room:room-runtime:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
-    kapt("androidx.room:room-compiler:$roomVersion")
+    ksp("androidx.room:room-compiler:$roomVersion")
     implementation("androidx.room:room-guava:$roomVersion")
 }
