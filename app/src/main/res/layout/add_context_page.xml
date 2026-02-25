@@ -199,6 +199,7 @@
 
         <ImageView
             android:id="@+id/generated_codi_image_contents"
+            android:src="@drawable/img_wedding_codi"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:importantForAccessibility="no"

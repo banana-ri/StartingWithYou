@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,54 +20,89 @@ public class UserInfoFragment extends Fragment {
     private EditText etName, etAge, etHeight, etWeight;
     private Button btnWoman, btnMan, btnOther, btnContinue;
     private String selectedGender = ""; // 선택된 성별을 담을 변수
-    private PreferenceHelper prefHelper;
+    private String receivedEmail = ""; // 넘어온 이메일을 담을 변수
+    private TextView tvTitle;
 
-    // Fragment는 onCreateView에서 레이아웃을 연결합니다.
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        // 1. 레이아웃 인플레이트, PreferenceHelper 초기화
-        View view = inflater.inflate(R.layout.user_info_page, container, false);
-        prefHelper = new PreferenceHelper(getContext());
+        // 레이아웃 불러오기
+        return inflater.inflate(R.layout.user_info_page, container, false);
+    }
 
-        // 2. 뷰 찾기
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        //이메일 받기
+        if (getArguments() != null) { //전달받은 번들이 있는지 (이메일이 넘어왔는지) 확인
+            receivedEmail = getArguments().getString("userEmail");}
+
+        // 뷰 찾기
         etName = view.findViewById(R.id.field_name);
         etAge = view.findViewById(R.id.field_age);
         etHeight = view.findViewById(R.id.field_height);
         etWeight = view.findViewById(R.id.field_weight);
+        tvTitle = view.findViewById(R.id.user_info_title);
 
         btnWoman = view.findViewById(R.id.button_woman);
         btnMan = view.findViewById(R.id.button_man);
         btnOther = view.findViewById(R.id.button_other);
         btnContinue = view.findViewById(R.id.button_continue);
 
-        // 3. 성별 버튼 클릭 이벤트 설정
+        //DB에 정보가 있는지 조회
+        if (!receivedEmail.isEmpty()) {
+            AppDatabase db = AppDatabase.getDatabase(getContext());
+            User existingUser = db.userDao().getUserByEmail(receivedEmail);
+
+            // 있으면 메인 화면에서 넘어왔다는 뜻
+            if (existingUser != null) { // 각 필드에 값 채움
+                tvTitle.setText("사용자 정보를 수정해 주세요");
+                etName.setText(existingUser.name);
+                etAge.setText(existingUser.age);
+                etHeight.setText(existingUser.height);
+                etWeight.setText(existingUser.weight);
+                selectGender(existingUser.gender);
+            }
+        }
+
+        // 성별 버튼 클릭 이벤트
         btnWoman.setOnClickListener(v -> selectGender("여성"));
         btnMan.setOnClickListener(v -> selectGender("남성"));
         btnOther.setOnClickListener(v -> selectGender("그 외"));
 
-        // 4. 저장 및 이동 로직
+        // 계속 버튼: 저장 및 이동 로직
         btnContinue.setOnClickListener(v -> {
-            String name = etName.getText().toString();
-            String age = etAge.getText().toString();
-            String height = etHeight.getText().toString();
-            String weight = etWeight.getText().toString();
+            String name = etName.getText().toString().trim();
+            String age = etAge.getText().toString().trim();
+            String height = etHeight.getText().toString().trim();
+            String weight = etWeight.getText().toString().trim();
+            String email = receivedEmail;
+            String gender = selectedGender;
 
-            if (selectedGender.isEmpty()) {
-                Toast.makeText(getContext(), "성별을 선택해주세요.", Toast.LENGTH_SHORT).show();
+            // 유효성 검사(빈칸 있는지)
+            if (email.isEmpty()) {
+                Toast.makeText(getContext(), "오류: 이메일 정보가 없습니다.", Toast.LENGTH_SHORT).show();
                 return;
             }
-            // PreferenceHelper를 사용하여 내부 저장소(SharedPreferences)에 저장
-            prefHelper.setUserData(name, age, height, weight, selectedGender);
+            if (name.isEmpty() || age.isEmpty() || height.isEmpty()|| weight.isEmpty() || gender.isEmpty()) {
+                Toast.makeText(getContext(), "모든 정보를 입력해주세요.", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
+            // DB에 저장
+            AppDatabase db = AppDatabase.getDatabase(getContext());
+            db.userDao().insert(new User(email, name, age, height, weight, gender));
             // 저장 완료 후 메인 화면으로 이동
-            Navigation.findNavController(v).navigate(R.id.action_userInfoFragment_to_mainFragment);
+            Toast.makeText(getContext(), "저장이 완료되었습니다.", Toast.LENGTH_SHORT).show();
+            Bundle bundle = new Bundle(); //입력받은 이메일을 담을 번들 생성
+            bundle.putString("userEmail", email); //키와 값 저장
+            Navigation.findNavController(v).navigate(R.id.action_userInfoFragment_to_mainFragment, bundle);
             });
 
-        return view;
     }
 
-    // [핵심] 단일 선택 로직: 선택된 버튼의 색상을 바꾸고 변수에 저장합니다.
+    // 선택된 버튼 색상 변경 / 변수에 저장
     private void selectGender(String gender) {
         selectedGender = gender;
 

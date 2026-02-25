@@ -1,5 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
+    id("org.jetbrains.kotlin.android") version "1.9.0"
+    id("org.jetbrains.kotlin.kapt") version "1.9.0"
 }
 
 android {
@@ -51,4 +53,12 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    val roomVersion = "2.6.1"
+
+    // toml에 정의된 라이브러리 사용
+    implementation("androidx.room:room-runtime:$roomVersion")
+    implementation("androidx.room:room-ktx:$roomVersion")
+    kapt("androidx.room:room-compiler:$roomVersion")
+    implementation("androidx.room:room-guava:$roomVersion")
 }

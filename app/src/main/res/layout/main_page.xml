@@ -111,6 +111,7 @@
 
         <ImageView
             android:id="@+id/generated_codi_image"
+            android:src="@drawable/img_main_codi"
             android:layout_width="0dp"
             android:layout_height="360dp"
             android:layout_weight="1"

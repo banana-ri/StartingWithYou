@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -18,22 +20,27 @@ public class ClosetDetailFragment extends Fragment {
     private ImageView detailImageView;
     private ChipGroup groupSeason, groupPart, groupThickness, groupLength;
 
-    // Fragment는 onCreateView에서 레이아웃을 연결합니다.
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.my_closet_details_page, container, false);
+        return inflater.inflate(R.layout.my_closet_details_page, container, false);
+    }
 
-        //1. 뷰 초기화
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        //뷰 찾기
         detailImageView = view.findViewById(R.id.detail_image_view);
         groupSeason = view.findViewById(R.id.chipGroup_season);
         groupPart = view.findViewById(R.id.chipGroup_part);
         groupThickness = view.findViewById(R.id.chipGroup_thickness);
         groupLength = view.findViewById(R.id.chipGroup_length);
 
-        //2. 필수 선택 로직 적용 (해제 시 첫 번째 칩 자동 선택)
+        // 필수 선택 로직 (해제 시 첫 번째 칩 자동 선택)
         setupMandatorySelection(groupPart, groupSeason, groupThickness, groupLength);
 
-        //3. 전달받은 데이터로 초기 상태 설정
+        // 전달받은 데이터로 초기 상태 설정
         if (getArguments() != null) {
             int imageId = getArguments().getInt("selectedImage");
             detailImageView.setImageResource(imageId);
@@ -44,7 +51,7 @@ public class ClosetDetailFragment extends Fragment {
             checkChipByText(groupLength, getArguments().getString("length"));
         }
 
-        // 4. 버튼 클릭 리스너
+        // 버튼 클릭 리스너
         view.findViewById(R.id.button_save).setOnClickListener(v -> { //저장하기 버튼
             saveClothesData();
         });
@@ -54,8 +61,6 @@ public class ClosetDetailFragment extends Fragment {
         view.findViewById(R.id.arrow_left_circle).setOnClickListener(v -> { //뒤로가기 버튼
             Navigation.findNavController(v).popBackStack();
         });
-
-        return view;
     }
 
     // [확인용] 특정 텍스트에 맞는 칩을 찾아 체크해주는 메서드

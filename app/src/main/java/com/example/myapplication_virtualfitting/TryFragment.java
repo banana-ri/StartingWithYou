@@ -26,6 +26,8 @@ public class TryFragment extends Fragment {
             });
         }
 
+        //이쯤에 유니티 연결 코드 추가
+
         return view;
     }
 }
