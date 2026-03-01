@@ -122,7 +122,7 @@
                         android:id="@+id/caution_clothing_desc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="start"
+                        android:layout_margin="4dp"
                         android:text="@string/situation_caution_clothing_desc"
                         android:textColor="#FF000000"
                         android:textSize="13sp" />
@@ -131,7 +131,7 @@
                         android:id="@+id/caution_clothing_footer"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="4dp"
+                        android:gravity="start"
                         android:text="@string/situation_caution_clothing_footer"
                         android:textColor="#FF828282"
                         android:textSize="12sp" />
@@ -149,6 +149,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:gravity="start"
                         android:text="@string/situation_caution_color_title"
                         android:textColor="#FF000000"
                         android:textSize="15sp"
@@ -199,16 +200,17 @@
 
         <ImageView
             android:id="@+id/generated_codi_image_contents"
-            android:src="@drawable/img_wedding_codi"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:importantForAccessibility="no"
             android:scaleType="fitCenter"
+            android:src="@drawable/img_wedding_codi"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.7" />
 
         <ImageButton
             android:id="@+id/chevron_left"
@@ -240,7 +242,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginHorizontal="15dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="80dp"
         android:background="@drawable/bg_rounded_color"
         android:clickable="true"
         android:focusable="true"

@@ -97,7 +97,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="280dp"
+        android:layout_marginBottom="250dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -166,7 +166,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/common_try"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:textColor="#1B1B1B"/>
             </LinearLayout>
 
             <!-- 상황 더하기 -->
@@ -191,7 +192,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/common_addcontext"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:textColor="#1B1B1B"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -216,7 +218,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/common_mycloset"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:textColor="#1B1B1B"/>
             </LinearLayout>
 
     </LinearLayout>
@@ -229,7 +232,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginVertical="50dp"
+        android:layout_marginVertical="60dp"
         android:contentDescription="@string/main_setting_button"
         android:src="@drawable/setting_button"
         app:backgroundTint="#FFFFFF"
