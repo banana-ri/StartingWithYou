@@ -102,9 +102,9 @@ public class ClosetFragment extends Fragment {
     // 테스트용 데이터 생성
     private void initDummyData() {
         allClothes.clear();
-        allClothes.add(new Cloth(R.drawable.cloth_tshirt, "여름", "상의", "보통", "짧음"));
-        allClothes.add(new Cloth(R.drawable.cloth_pants, "봄", "하의", "얇음", "약간 긺"));
-        allClothes.add(new Cloth(R.drawable.cloth_skirt, "겨울", "하의", "두꺼움", "보통"));
+        allClothes.add(new Cloth(R.drawable.cloth_tshirt, "가을", "상의", "보통", "긺"));
+        allClothes.add(new Cloth(R.drawable.cloth_jeans, "봄", "하의", "얇음", "약간 긺"));
+        allClothes.add(new Cloth(R.drawable.cloth_pants, "겨울", "하의", "두꺼움", "보통"));
     }
 
 
