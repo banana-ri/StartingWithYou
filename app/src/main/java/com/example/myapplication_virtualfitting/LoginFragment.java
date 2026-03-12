@@ -1,6 +1,7 @@
 package com.example.myapplication_virtualfitting;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +17,13 @@ import androidx.navigation.Navigation;
 
 public class LoginFragment extends Fragment {
 
+    private static final String TAG = "LoginFragment";
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // 레이아웃 불러오기
+        Log.d(TAG, "화면 전환됨");
         return inflater.inflate(R.layout.sign_in_page, container, false);
     }
 
@@ -55,14 +59,19 @@ public class LoginFragment extends Fragment {
                 }
 
                 User user = userDao.getUserByEmail(email); //이메일로 유저 조회
+                Log.d(TAG, "사용자 조회 중...");
 
                 if (user != null) {// 기존 사용자
+                    Log.d(TAG, "사용자 확인됨: " + user.name);
                     //환영 메시지
                     String welcomeMsg = String.format("%s님 환영합니다!", user.name);
+                    Bundle bundle = new Bundle(); //입력받은 이메일을 담을 번들 생성
+                    bundle.putString("userEmail", email); //키와 값 저장
                     Toast.makeText(getContext(), welcomeMsg, Toast.LENGTH_SHORT).show();
                     //메인 화면으로 이동 (정보를 입력할 필요가 없음)
-                    Navigation.findNavController(v).navigate(R.id.action_loginFragment_to_mainFragment); //메인 화면으로
+                    Navigation.findNavController(v).navigate(R.id.action_loginFragment_to_mainFragment, bundle); //메인 화면으로
                 } else { //신규 사용자
+                    Log.d(TAG, "신규 사용자: " + email);
                     Bundle bundle = new Bundle(); //입력받은 이메일을 담을 번들 생성
                     bundle.putString("userEmail", email); //키와 값 저장
                     Navigation.findNavController(v).navigate(

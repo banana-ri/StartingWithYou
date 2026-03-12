@@ -1,6 +1,7 @@
 package com.example.myapplication_virtualfitting;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,8 @@ import androidx.navigation.Navigation;
 
 public class TryFragment extends Fragment {
 
+    private static final String TAG = "TryFragment";
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -22,6 +25,7 @@ public class TryFragment extends Fragment {
         ImageButton btnBack = view.findViewById(R.id.arrow_left_circle);
         if (btnBack != null) {
             btnBack.setOnClickListener(v -> {
+                Log.d(TAG, "페이지 이동: 뒤로가기");
                 Navigation.findNavController(v).popBackStack();
             });
         }

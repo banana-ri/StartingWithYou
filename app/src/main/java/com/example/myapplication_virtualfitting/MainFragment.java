@@ -1,6 +1,7 @@
 package com.example.myapplication_virtualfitting;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,10 +21,12 @@ public class MainFragment extends Fragment {
     private FloatingActionButton fabSetting;
     private ImageView ivCodiImage;
     private String receivedEmail = ""; // 넘어온 이메일을 담을 변수
+    private static final String TAG = "MainFragment";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         //레이아웃 불러오기
+        Log.d(TAG, "화면 전환됨");
         return inflater.inflate(R.layout.main_page, container, false);
     }
 
@@ -33,7 +36,8 @@ public class MainFragment extends Fragment {
 
         //이메일 받기
         if (getArguments() != null) { //전달받은 번들이 있는지 (이메일이 넘어왔는지) 확인
-            receivedEmail = getArguments().getString("userEmail");}
+            receivedEmail = getArguments().getString("userEmail");
+            Log.d(TAG, "전달받은 이메일: " + receivedEmail);}
 
         // 뷰 연결
         btnAddContext = view.findViewById(R.id.button_addcontext);
@@ -48,18 +52,22 @@ public class MainFragment extends Fragment {
         // 클릭 리스너
         // 상황 추가
         btnAddContext.setOnClickListener(v -> {
+            Log.d(TAG, "페이지 이동: 상황 더하기");
             Navigation.findNavController(v).navigate(R.id.action_mainFragment_to_situationFragment);
         });
         // 가상 피팅
         btnTry.setOnClickListener(v -> {
+            Log.d(TAG, "페이지 이동: 입어보기");
             Navigation.findNavController(v).navigate(R.id.action_mainFragment_to_tryFragment);
         });
         // 나의 옷장
         btnMyCloset.setOnClickListener(v -> {
+            Log.d(TAG, "페이지 이동: 나의 옷장");
             Navigation.findNavController(v).navigate(R.id.action_mainFragment_to_closetFragment);
         });
         //설정/정보
         fabSetting.setOnClickListener(v -> {
+            Log.d(TAG, "페이지 이동: 정보 수정");
             Bundle bundle = new Bundle();
             bundle.putString("userEmail", receivedEmail); //이메일이 DB의 기본키라서 넘겨줌
             Navigation.findNavController(v).navigate(R.id.action_mainFragment_to_userInfoFragment, bundle);

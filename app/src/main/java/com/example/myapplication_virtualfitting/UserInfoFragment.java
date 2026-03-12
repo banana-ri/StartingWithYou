@@ -2,6 +2,7 @@ package com.example.myapplication_virtualfitting;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,11 +23,13 @@ public class UserInfoFragment extends Fragment {
     private String selectedGender = ""; // 선택된 성별을 담을 변수
     private String receivedEmail = ""; // 넘어온 이메일을 담을 변수
     private TextView tvTitle;
+    private static final String TAG = "UserInfoFragment";
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // 레이아웃 불러오기
+        Log.d(TAG, "화면 전환됨");
         return inflater.inflate(R.layout.user_info_page, container, false);
     }
 
@@ -36,7 +39,8 @@ public class UserInfoFragment extends Fragment {
 
         //이메일 받기
         if (getArguments() != null) { //전달받은 번들이 있는지 (이메일이 넘어왔는지) 확인
-            receivedEmail = getArguments().getString("userEmail");}
+            receivedEmail = getArguments().getString("userEmail");
+            Log.d(TAG, "전달받은 이메일: " + receivedEmail);}
 
         // 뷰 찾기
         etName = view.findViewById(R.id.field_name);
@@ -57,6 +61,7 @@ public class UserInfoFragment extends Fragment {
 
             // 있으면 메인 화면에서 넘어왔다는 뜻
             if (existingUser != null) { // 각 필드에 값 채움
+                Log.d(TAG, "사용자 정보 찾음: " + receivedEmail + " " + existingUser.name);
                 tvTitle.setText("사용자 정보를 수정해 주세요");
                 etName.setText(existingUser.name);
                 etAge.setText(existingUser.age);
@@ -93,6 +98,14 @@ public class UserInfoFragment extends Fragment {
             // DB에 저장
             AppDatabase db = AppDatabase.getDatabase(getContext());
             db.userDao().insert(new User(email, name, age, height, weight, gender));
+            Log.d(TAG, "==사용자 정보 저장 중==");
+            Log.d(TAG, "email: " + email);
+            Log.d(TAG, "name: " + name);
+            Log.d(TAG, "age: " + age);
+            Log.d(TAG, "height: " + height);
+            Log.d(TAG, "weight: " + weight);
+            Log.d(TAG, "gender: " + gender);
+            Log.d(TAG, "====================");
             // 저장 완료 후 메인 화면으로 이동
             Toast.makeText(getContext(), "저장이 완료되었습니다.", Toast.LENGTH_SHORT).show();
             Bundle bundle = new Bundle(); //입력받은 이메일을 담을 번들 생성

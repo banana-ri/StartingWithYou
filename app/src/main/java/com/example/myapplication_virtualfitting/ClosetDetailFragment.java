@@ -61,11 +61,11 @@ public class ClosetDetailFragment extends Fragment {
             saveClothesData();
         });
         view.findViewById(R.id.button_recommend).setOnClickListener(v -> { //추천받기 버튼
-            Log.d(TAG, "추천받기 버튼 누름");
+            Log.d(TAG, "페이지 이동: 추천받기");
             Navigation.findNavController(v).navigate(R.id.action_closetDetailFragment_to_mainFragment); //메인 화면으로 이동
         });
         view.findViewById(R.id.arrow_left_circle).setOnClickListener(v -> { //뒤로가기 버튼
-            Log.d(TAG, "뒤로가기 버튼 누름");
+            Log.d(TAG, "페이지 이동: 뒤로가기");
             Navigation.findNavController(v).popBackStack();
         });
     }
