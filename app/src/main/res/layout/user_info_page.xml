@@ -39,9 +39,8 @@
 
             <EditText
                 android:id="@+id/field_age"
-                android:layout_width="0dp"
+                android:layout_width="250dp"
                 android:layout_height="48dp"
-                android:layout_weight="1"
                 android:background="@drawable/rounded_border_field"
                 android:hint="@string/user_info_age_hint"
                 android:textSize="15sp"
@@ -57,13 +56,6 @@
                 android:textSize="15sp"
                 android:textColor="#FF000000"
                 android:layout_marginHorizontal="5dp"/>
-
-            <Spinner
-                android:id="@+id/select_job"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="10dp"
-                android:layout_weight="1.2" />
         </LinearLayout>
 
         <LinearLayout

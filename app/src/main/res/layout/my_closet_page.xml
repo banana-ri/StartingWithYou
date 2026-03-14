@@ -27,7 +27,6 @@
             android:contentDescription="@string/common_back"
             android:src="@drawable/arrow_left_circle" />
 
-            <!--  TEXT: 나의 옷장 텍스트스타일볼드 없어도 볼드처리 됐는지 확인!! -->
             <TextView
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
@@ -150,6 +149,7 @@
         android:src="@drawable/plus"
         app:backgroundTint="#FFFFFF"
         app:borderWidth="0dp"
-        app:fabSize="normal" />
+        app:fabSize="normal"
+        android:tint="#1B1B1B"/>
 
 </RelativeLayout>

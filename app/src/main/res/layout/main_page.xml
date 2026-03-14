@@ -237,7 +237,8 @@
         android:src="@drawable/setting_button"
         app:backgroundTint="#FFFFFF"
         app:borderWidth="0dp"
-        app:fabSize="normal" />
+        app:fabSize="normal"
+        android:tint="#1B1B1B"/>
 
     <!-- 사용자 정보 수정 fab
     <android.support.design.widget.FloatingActionButton
