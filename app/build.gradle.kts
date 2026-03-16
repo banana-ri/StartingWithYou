@@ -57,6 +57,10 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 
+    // 기상청 API 연동을 위한 Retrofit 라이브러리 추가
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
     val roomVersion = "2.6.1"
 
     // toml에 정의된 라이브러리 사용
