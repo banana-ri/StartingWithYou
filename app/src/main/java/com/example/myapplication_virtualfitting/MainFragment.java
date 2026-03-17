@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.gson.Gson;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -101,46 +103,90 @@ public class MainFragment extends Fragment {
 
         //테스트용 고정값 사용
         Call<WeatherResponse> call = weatherInterface.getWeather(
-                API_KEY, 1, 10, "JSON", "20260314", "0500", 55, 127
+                API_KEY, 1, 100, "JSON", "20260317", "0200", 55, 127
         );
 
         call.enqueue(new Callback<WeatherResponse>() {
             @Override
             public void onResponse(Call<WeatherResponse> call, Response<WeatherResponse> response) {
+                if (!isAdded()) return;
+
                 // 프래그먼트가 화면에서 사라졌을 때(isAdded)를 체크
-                if (isAdded() && response.isSuccessful() && response.body() != null) {
+                if (response.isSuccessful() && response.body() != null) {
                     WeatherResponse weatherData = response.body();
 
-                    for (WeatherResponse.WeatherItem item : weatherData.response.body.items.item) {
-                        switch (item.category) {
-                            case "TMN":
-                                Log.d(TAG, "오늘 최저기온: " + item.Value + "°C");
-                                break;
-                            case "TMX":
-                                Log.d(TAG, "오늘 최고기온: " + item.Value + "°C");
-                                break;
-                            case "POP":
-                                Log.d(TAG, "강수확률: " + item.Value + "%");
-                                break;
-                            case "WSD":
-                                Log.d(TAG, "풍속: " + item.Value + "m/s");
-                                break;
-                            case "SKY":
-                                String sky_state = item.Value.equals("1") ? "맑음" : "흐림";
-                                Log.d(TAG, "하늘상태: " + sky_state);
-                                break;
-                            case "PTY":
-                                String rain_state = item.Value.equals("1") ? "맑음" : "흐림";
-                                Log.d(TAG, "강수형태: " + rain_state);
-                                break;
-                            case "TH1":
-                                Log.d(TAG, "현재 기온 수신: " + item.Value + "도");
-                                break;
-                            // UI 업데이트
-                            // tvTemperature.setText(item.fcstValue + "°C");
+                    String minTemp = "";
+                    String maxTemp = "";
+
+                    if (weatherData.response != null && weatherData.response.body != null &&
+                            weatherData.response.body.items != null) {
+
+                        Log.d(TAG, "성공: 데이터를 정상적으로 수신했습니다.");
+                        Log.d(TAG, "실제 JSON 데이터: " + new Gson().toJson(response.body()));
+                        Log.d(TAG, "==== 날씨 데이터 분석 시작 ====");
+
+                        for (WeatherResponse.WeatherItem item : weatherData.response.body.items.item) {
+                            if (item == null || item.category == null) continue;
+
+                            if (!item.category.equals("TMN") && !item.category.equals("TMX")) {
+                                if (item.fcstTime != null && !item.fcstTime.equals("0600")) continue; //0600 시각 데이터만 필터링
+                            }
+
+                            String val = (item.fcstValue == null) ? "0" : item.fcstValue;
+
+                            switch (item.category) {
+                                case "TMN":
+                                    minTemp = val;
+                                    Log.d(TAG, "[최저기온] 저장: " + val);
+                                    break;
+                                case "TMX":
+                                    maxTemp = val;
+                                    Log.d(TAG, "[최고기온] 저장: " + val);
+                                    break;
+                                case "TMP":
+                                    Log.d(TAG, "[현재기온]: " + val+ "도");
+                                    break;
+                                case "POP":
+                                    Log.d(TAG, "[강수확률]: " + val + "%");
+                                    break;
+                                case "WSD":
+                                    Log.d(TAG, "[풍속]: " + val + "m/s");
+                                    break;
+                                case "SKY":
+                                    String sky_state = "1".equals(val) ? "맑음" : "흐림";
+                                    Log.d(TAG, "[하늘상태]: " + sky_state);
+                                    break;
+                                case "PTY":
+                                    String rain_state = "0".equals(val) ? "없음" : "비/눈";
+                                    Log.d(TAG, "[강수형태]: " + rain_state);
+                                    break;
+
+                                // UI 업데이트
+                                // tvTemperature.setText(item.fcstValue + "°C");
+                            }
                         }
+                        Log.d(TAG, "==== 날씨 데이터 분석 완료 ====");
+                        if (!maxTemp.isEmpty() && !minTemp.isEmpty()) {
+                            tvTemperature.setText(maxTemp + "°C / " + minTemp + "°C");
+                        } else if (!maxTemp.isEmpty()) {
+                            tvTemperature.setText(maxTemp + "°C");
+                        } else if (!minTemp.isEmpty()) {
+                            tvTemperature.setText(minTemp + "°C");
+                        }
+
+                    } else {
+                        // 2. 응답은 성공(200 OK)이나, 기상청 서버에서 '에러 내용'을 보낸 경우
+                        Log.e(TAG, "실패: 서버 응답은 왔으나 내용이 없습니다.");
+                        Log.e(TAG, "서버에서 보낸 원본: " + response.toString());
+
+                        // 토스트나 UI로 에러 알림
+                        Toast.makeText(getContext(), "날씨 데이터를 불러올 수 없습니다.", Toast.LENGTH_SHORT).show();
                     }
+                } else{
+                    //HTTP 응답 자체가 실패한 경우
+                    Log.d(TAG, "실패: 통신 실패. 코드: " + response.code());
                 }
+
             }
 
             @Override

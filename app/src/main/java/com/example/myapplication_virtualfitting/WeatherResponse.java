@@ -20,8 +20,13 @@ public class WeatherResponse {
     //기상청JSON 결과값이 중첩구조이기 때문에 같은 구조로 클래스를 만듦
     public class WeatherItem{
         public String category; //자료 구분 코드
-        public String Value; //예보 값
-        public String Date; //예보 일자
-        public String Time; //예보 시각
+        @com.google.gson.annotations.SerializedName("fcstValue")
+        public String fcstValue; //예보 값
+
+        @com.google.gson.annotations.SerializedName("fcstDate")
+        public String fcstDate; //예보 일자
+
+        @com.google.gson.annotations.SerializedName("fcstTime")
+        public String fcstTime; //예보 시각
     }
 }
