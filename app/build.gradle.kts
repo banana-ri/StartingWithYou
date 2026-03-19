@@ -68,4 +68,7 @@ dependencies {
     implementation("androidx.room:room-ktx:$roomVersion")
     ksp("androidx.room:room-compiler:$roomVersion")
     implementation("androidx.room:room-guava:$roomVersion")
+
+    //위치 서비스 라이브러리 추가
+    implementation("com.google.android.gms:play-services-location:21.0.1")
 }
