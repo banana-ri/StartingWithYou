@@ -1,21 +1,23 @@
 package com.example.myapplication_virtualfitting;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Cloth {
-    int imageResId; // 이미지 리소스
-    String season, part, thickness, length; // 카테고리 (계절, 부분, 두께, 기장)
+    @SerializedName("_id") // MongoDB의 고유 ID
+    public String id;
 
-    public Cloth(int imageResId, String season, String part, String thickness, String length) {
-        this.imageResId = imageResId; //이미지 리소스
-        this.season = season; //계절
-        this.part = part; //부분
-        this.thickness = thickness; //두께
-        this.length = length; //기장
+    public String user_email;
+    public String season;
+    public String part;
+    public String thickness;
+    public String length;
+    public String image_url; // 🌟 핵심: 서버에 저장된 사진 이름 (예: uuid.png)
+
+    public Cloth(String season, String part, String thickness, String length, String image_url) {
+        this.season = season;
+        this.part = part;
+        this.thickness = thickness;
+        this.length = length;
+        this.image_url = image_url;
     }
-
-    //Getter 메소드
-    public int getImageResId() { return imageResId; }
-    public String getSeason() { return season; }
-    public String getPart() { return part; }
-    public String getThickness() { return thickness; }
-    public String getLength() { return length; }
 }

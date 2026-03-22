@@ -1,5 +1,9 @@
 package com.example.myapplication_virtualfitting;
 
+// 🌟 메모장 기능을 쓰기 위해 추가된 2줄
+
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,6 +19,15 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import com.example.myapplication_virtualfitting.network.ApiService;
+import com.example.myapplication_virtualfitting.network.LoginRequest;
+import com.example.myapplication_virtualfitting.network.LoginResponse;
+import com.example.myapplication_virtualfitting.network.RetrofitClient;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class LoginFragment extends Fragment {
 
     private static final String TAG = "LoginFragment";
@@ -22,8 +35,6 @@ public class LoginFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        // 레이아웃 불러오기
-        Log.d(TAG, "화면 전환됨");
         return inflater.inflate(R.layout.sign_in_page, container, false);
     }
 
@@ -36,64 +47,82 @@ public class LoginFragment extends Fragment {
         LinearLayout btnGoogle = view.findViewById(R.id.button_google);
         LinearLayout btnNaver = view.findViewById(R.id.naver_button);
         EditText emailEditText = view.findViewById(R.id.field_email);
+        EditText passwordEditText = view.findViewById(R.id.field_password);
 
-        AppDatabase db = AppDatabase.getDatabase(getContext()); //DB 본체 불러오기
-        UserDao userDao = db.userDao(); //Dao 불러오기
-
-        // 테스트용 데이터 삽입
-        new Thread(() -> {
-            //테스트용 유저 생성
-            User testUser = new User("test@naver.com", "홍길동", "25", "180", "75", "남성");
-            userDao.insert(testUser); //삽입
-        }).start();
-
-        // 클릭 리스너
-        // 계속 버튼: 사용자 정보 입력 화면 / 메인 화면으로 이동
         if (btnContinue != null) {
             btnContinue.setOnClickListener(v -> {
-                String email = emailEditText.getText().toString().trim(); // 이메일 입력창에서 텍스트 가져오기
+                String email = emailEditText.getText().toString().trim();
 
-                if (email.isEmpty()) { //입력된 값이 없음
-                    Toast.makeText(getContext(), "이메일을 입력해주세요.", Toast.LENGTH_SHORT).show();
+                if (email.isEmpty()) {
+                    Toast.makeText(getContext(), "이메일을 먼저 입력해주세요.", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                User user = userDao.getUserByEmail(email); //이메일로 유저 조회
-                Log.d(TAG, "사용자 조회 중...");
-
-                if (user != null) {// 기존 사용자
-                    Log.d(TAG, "사용자 확인됨: " + user.name);
-                    //환영 메시지
-                    String welcomeMsg = String.format("%s님 환영합니다!", user.name);
-                    Bundle bundle = new Bundle(); //입력받은 이메일을 담을 번들 생성
-                    bundle.putString("userEmail", email); //키와 값 저장
-                    Toast.makeText(getContext(), welcomeMsg, Toast.LENGTH_SHORT).show();
-                    //메인 화면으로 이동 (정보를 입력할 필요가 없음)
-                    Navigation.findNavController(v).navigate(R.id.action_loginFragment_to_mainFragment, bundle); //메인 화면으로
-                } else { //신규 사용자
-                    Log.d(TAG, "신규 사용자: " + email);
-                    Bundle bundle = new Bundle(); //입력받은 이메일을 담을 번들 생성
-                    bundle.putString("userEmail", email); //키와 값 저장
-                    Navigation.findNavController(v).navigate(
-                            R.id.action_loginFragment_to_userInfoFragment,
-                            bundle); //번들과 함께 정보 입력 화면으로
+                // 비밀번호 칸이 숨겨져 있으면 보여주고 버튼 이름 변경
+                if (passwordEditText.getVisibility() == View.GONE) {
+                    passwordEditText.setVisibility(View.VISIBLE);
+                    btnContinue.setText("로그인");
+                    return;
                 }
-            });
-        }
-        //구글 로그인 버튼
-        if (btnGoogle != null) {
-            btnGoogle.setOnClickListener(v -> {
-                Toast.makeText(getContext(), "구글 로그인 기능 구현 예정", Toast.LENGTH_SHORT).show();
-                // 구글 로그인 SDK 호출 로직
-            });
-        }
-        //네이버 로그인 버튼
-        if (btnNaver != null) {
-            btnNaver.setOnClickListener(v -> {
-                Toast.makeText(getContext(), "네이버 로그인 기능 구현 예정", Toast.LENGTH_SHORT).show();
-                // 네이버 로그인 SDK 호출 로직
+
+                String password = passwordEditText.getText().toString().trim();
+
+                if (password.isEmpty()) {
+                    Toast.makeText(getContext(), "비밀번호를 입력해주세요.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                // 서버로 로그인 요청 쏘기
+                ApiService apiService = RetrofitClient.getInstance().create(ApiService.class);
+                apiService.login(new LoginRequest(email, password)).enqueue(new Callback<LoginResponse>() {
+                    @Override
+                    public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                        if (response.isSuccessful() && response.body() != null) {
+                            LoginResponse result = response.body();
+
+                            // 🌟 여기서부터 덮어쓰기! 🌟
+                            if ("success".equals(result.status)) {
+                                // 1. 완벽하게 성공!
+                                Toast.makeText(getContext(), "로그인 성공!", Toast.LENGTH_SHORT).show();
+
+                                SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putString("USER_EMAIL", email);
+                                editor.apply();
+
+                                Log.d(TAG, "메모장에 이메일 저장 완벽 성공: " + email);
+                                Navigation.findNavController(v).navigate(R.id.action_loginFragment_to_mainFragment);
+
+                            } else if ("not_found".equals(result.status)) {
+                                // 2. 이메일이 아예 없을 때 -> 회원가입으로 이동
+                                Toast.makeText(getContext(), "계정 정보가 없습니다. 회원가입을 진행합니다.", Toast.LENGTH_SHORT).show();
+                                Bundle bundle = new Bundle();
+                                bundle.putString("userEmail", email);
+                                bundle.putString("userPassword", password);
+                                Navigation.findNavController(v).navigate(R.id.action_loginFragment_to_userInfoFragment, bundle);
+
+                            } else if ("wrong_password".equals(result.status)) {
+                                // 3. 🌟 우리가 원했던 기능! 비밀번호만 틀렸을 때 -> 안 넘어가고 토스트만 띄움!
+                                Toast.makeText(getContext(), "비밀번호가 틀렸습니다. 다시 확인해 주세요.", Toast.LENGTH_SHORT).show();
+                            }
+                            // 🌟 여기까지 덮어쓰기 끝! 🌟
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<LoginResponse> call, Throwable t) {
+                        Log.e(TAG, "서버 통신 실패", t);
+                        Toast.makeText(getContext(), "서버와 연결할 수 없습니다.", Toast.LENGTH_SHORT).show();
+                    }
+                });
             });
         }
 
+        if (btnGoogle != null) {
+            btnGoogle.setOnClickListener(v -> Toast.makeText(getContext(), "구글 로그인 기능 구현 예정", Toast.LENGTH_SHORT).show());
+        }
+        if (btnNaver != null) {
+            btnNaver.setOnClickListener(v -> Toast.makeText(getContext(), "네이버 로그인 기능 구현 예정", Toast.LENGTH_SHORT).show());
+        }
     }
 }
